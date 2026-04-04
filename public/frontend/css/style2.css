@@ -1,0 +1,486 @@
+/************************************* home-slider css start *************************************/
+/*====================================
+    home-slider swiper css
+====================================*/
+.slider-content .home-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+    width: 100%;
+}
+
+/*====================================
+    slider-image css
+====================================*/
+.slider-content .home-slider .slider-image {
+    position: relative;
+}
+.slider-content .home-slider .slider-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #1a1a1a;
+    opacity: 0.10;
+}
+@media (min-width: 768px) {
+    .slider-content .home-slider .slider-image img {
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+/*====================================
+    slider-text-info css
+====================================*/
+@media (min-width: 1600px) {
+    .slider-content .home-slider .slider-text-info h2 {
+        font-size: 88px;
+    }
+    .slider-content .home-slider .slider-text-info .slider-feature {
+        margin-top: 48px;
+    }
+    .slider-content .home-slider .slider-text-info a {
+        margin-top: 53px;
+    }
+}
+@media (min-width: 1800px) {
+    .slider-content .home-slider .slider-text-info {
+        width: 75%;
+    }
+}
+
+/*====================================
+    slider-content transition css
+====================================*/
+.slider-content .home-slider.swiper .swiper-slide .slider-text-info .slider-sub-title,
+.slider-content .home-slider.swiper .swiper-slide .slider-text-info h2,
+.slider-content .home-slider.swiper .swiper-slide .slider-text-info .slider-feature,
+.slider-content .home-slider.swiper .swiper-slide .slider-text-info a {
+    opacity: 0;
+}
+.slider-content .home-slider.swiper .swiper-slide.swiper-slide-active .slider-text-info .slider-sub-title,
+.slider-content .home-slider.swiper .swiper-slide.swiper-slide-active .slider-text-info h2,
+.slider-content .home-slider.swiper .swiper-slide.swiper-slide-active .slider-text-info .slider-feature,
+.slider-content .home-slider.swiper .swiper-slide.swiper-slide-active .slider-text-info a {
+    opacity: 1;
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.slider-content .home-slider.swiper .swiper-slide.swiper-slide-active .slider-text-info .slider-sub-title {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+}
+.slider-content .home-slider.swiper .swiper-slide.swiper-slide-active .slider-text-info h2 {
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+    -webkit-animation-duration: 0.6s;
+    animation-duration: 0.6s;
+}
+.slider-content .home-slider.swiper .swiper-slide.swiper-slide-active .slider-text-info .slider-feature {
+    -webkit-animation-delay: 0.9s;
+    animation-delay: 0.9s;
+    -webkit-animation-duration: 0.9s;
+    animation-duration: 0.9s;
+}
+.slider-content .home-slider.swiper .swiper-slide.swiper-slide-active .slider-text-info a {
+    -webkit-animation-delay: 1.2s;
+    animation-delay: 1.2s;
+    -webkit-animation-duration: 1.2s;
+    animation-duration: 1.2s;
+}
+
+/*====================================
+    slider-navigation css
+====================================*/
+.slider-content .home-slider.swiper .swiper-buttons .swiper-buttons-wrap button {
+    color: var(--heading-font-color);
+    font-size: 20px;
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+    background-color: var(--extra-font-color);
+    border-radius: 50%;
+    -webkit-transition: color 0.5s ease-in-out,background-color 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out,background-color 0.5s ease-in-out;
+}
+.slider-content .home-slider.swiper .swiper-buttons .swiper-buttons-wrap button.swiper-prev {
+    left: 5px;
+}
+.slider-content .home-slider.swiper .swiper-buttons .swiper-buttons-wrap button.swiper-next {
+    right: 5px;
+}
+.slider-content .home-slider.swiper .swiper-buttons .swiper-buttons-wrap button:hover {
+    color: var(--extra-font-color);
+    background-color: var(--dominant-font-color);
+}
+@media (min-width: 1400px) {
+    .slider-content .home-slider.swiper .swiper-buttons .swiper-buttons-wrap button.swiper-prev {
+        left: 15px;
+    }
+    .slider-content .home-slider.swiper .swiper-buttons .swiper-buttons-wrap button.swiper-next {
+        right: 15px;
+    }
+}
+@media (min-width: 1600px) {
+    .slider-content .home-slider.swiper .swiper-buttons .swiper-buttons-wrap button {
+        width: 56px;
+        height: 56px;
+    }
+    .slider-content .home-slider.swiper .swiper-buttons .swiper-buttons-wrap button.swiper-prev {
+        left: 100px;
+    }
+    .slider-content .home-slider.swiper .swiper-buttons .swiper-buttons-wrap button.swiper-next {
+        right: 100px;
+    }
+}
+
+/*====================================
+    slider-dot css
+====================================*/
+.slider-content .home-slider.swiper .swiper-dots .swiper-pagination {
+    width: unset;
+    position: unset;
+    margin: -5px 0px 0px -5px;
+}
+.slider-content .home-slider.swiper .swiper-dots .swiper-pagination span.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: var(--secondary-font-color);
+    margin: 5px 0px 0px 5px;
+    opacity: 1;
+    border: 1px solid var(--secondary-font-color);
+}
+.slider-content .home-slider.swiper .swiper-dots .swiper-pagination span.swiper-pagination-bullet:hover,
+.slider-content .home-slider.swiper .swiper-dots .swiper-pagination span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: var(--dominant-font-color);
+    border-color: var(--dominant-font-color);
+}
+/************************************* home-slider css end *************************************/
+
+/************************************* category-slider css start *************************************/
+/*====================================
+    category-slider css
+====================================*/
+.category-slider .cat-block .cat-dot {
+    background-color: rgba(var(--border-color),var(--border-opacity));
+}
+.category-slider .cat-block .cat-block-wrap {
+    position: relative;
+}
+.category-slider .cat-block .cat-block-wrap::after {
+    content: "";
+    position: absolute;
+    top: var(--before-height);
+    right: var(--before-width);
+    left: var(--before-width);
+    height: 1px;
+    background-color: rgba(var(--border-color),var(--border-opacity));
+}
+
+/*====================================
+    category-slider swiper css
+====================================*/
+.category-slider .cat-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+    width: 50%;
+}
+@media (min-width: 768px) {
+    .category-slider .cat-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 33.33%;
+    }
+}
+@media (min-width: 992px) {
+    .category-slider .cat-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 25%;
+    }
+}
+@media (min-width: 1400px) {
+    .category-slider .cat-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 20%;
+    }
+}
+
+/*====================================
+    cat-content css
+====================================*/
+.category-slider .cat-content a .cat-link {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity 0.5s ease-in-out,visibility 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out,visibility 0.5s ease-in-out;
+}
+.category-slider .cat-content:hover a .cat-link {
+    opacity: 1;
+    visibility: visible;
+}
+.category-slider .cat-content a .cat-link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--dominant-font-color);
+    opacity: 0.95;
+    transform: scale(0);
+    z-index: -1;
+    border-radius: 50%;
+    -webkit-transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+}
+.category-slider .cat-content:hover a .cat-link::after {
+    transform: scale(1);
+}
+.category-slider .cat-content a span.cat-link-btn {
+    border-bottom: 2px solid;
+}
+/************************************* category-slider css end *************************************/
+
+/************************************* collection-tab css start *************************************/
+/*====================================
+    collection-tab css
+====================================*/
+.collection-tab ul.nav-tabs {
+    margin-top: -8px;
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+}
+.collection-tab ul.nav-tabs>* {
+    margin-top: 8px;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+}
+@media (min-width: 1200px) {
+    .collection-tab ul.nav-tabs {
+        margin-top: -23px;
+    }
+    .collection-tab ul.nav-tabs>* {
+        margin-top: 23px;
+    }
+}
+
+/* collection-tab-title-mobile css */
+.collection-tab ul.nav-tabs li a span.collection-tab-title-mobile {
+    color: var(--secondary-font-color);
+    -webkit-transition: color 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out;
+}
+.collection-tab ul.nav-tabs li a:hover span.collection-tab-title-mobile,
+.collection-tab ul.nav-tabs li a.active span.collection-tab-title-mobile {
+    color: var(--dominant-font-color);
+}
+
+/* collection-tab-title-desktop css */
+.collection-tab ul.nav-tabs li a.active .collection-tab-title-desktop .collection-tab-counter-icon>* {
+    background-color: var(--dominant-font-color);
+    border-color: var(--dominant-font-color);
+}
+.collection-tab ul.nav-tabs li a .collection-tab-title-desktop .collection-tab-counter-icon span.collection-tab-icon {
+    opacity: 0;
+    visibility: hidden;
+}
+.collection-tab ul.nav-tabs li a.active .collection-tab-title-desktop .collection-tab-counter-icon span.collection-tab-icon {
+    opacity: 1;
+    visibility: visible;
+}
+
+/*====================================
+    collection-tab tab-content css
+====================================*/
+.collection-tab .tab-content .collection-banner .row>*:nth-child(even) {
+    padding-top: 15px;
+}
+.collection-tab .tab-content .collection-banner a img {
+    -webkit-filter: brightness(0.9);
+    filter: brightness(0.9);
+}
+@media (min-width: 576px) {
+    .collection-tab .tab-content .collection-banner .row>*:nth-child(even) {
+        padding-top: 30px;
+    }
+}
+@media (min-width: 1200px) {
+    .collection-tab .tab-content .collection-banner .row>*:nth-child(even) {
+        padding-top: 50px;
+    }
+}
+
+/* collection-tab collection-banner-label css */
+.collection-tab .tab-content .collection-banner a span.collection-banner-label {
+    animation: MoveUpDown 5s linear infinite;
+}
+.collection-tab .tab-content .collection-banner .row>*:nth-child(even) a span.collection-banner-label {
+    animation: MoveDownUp 5s linear infinite;
+}
+
+/* MoveUpDown keyframes css */
+@-webkit-keyframes MoveUpDown {
+    0%, 100% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+@keyframes MoveUpDown {
+    0%, 100% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+/* MoveDownUp keyframes css */
+@-webkit-keyframes MoveDownUp {
+    0%, 100% {
+        transform: translateY(10px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+@keyframes MoveDownUp {
+    0%, 100% {
+        transform: translateY(10px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+/************************************* collection-tab css end *************************************/
+
+/************************************* brand-logo css start *************************************/
+/*====================================
+    brand-logo-text css
+====================================*/
+.brand-logo .brand-logo-text {
+    position: relative;
+}
+.brand-logo .brand-logo-text::before,
+.brand-logo .brand-logo-text::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-image: radial-gradient(circle, rgba(var(--border-color),var(--border-opacity))0%, var(--extra-font-color)100%);
+}
+.brand-logo .brand-logo-text::before {
+    top: 0;
+}
+.brand-logo .brand-logo-text::after {
+    bottom: 0;
+}
+
+/*====================================
+    brand-logo swiper css
+====================================*/
+.brand-logo .brand-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+    width: 50%;
+}
+@media (min-width: 576px) {
+    .brand-logo .brand-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 33.33%;
+    }
+}
+@media (min-width: 992px) {
+    .brand-logo .brand-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 25%;
+    }
+}
+@media (min-width: 1200px) {
+    .brand-logo .brand-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 20%;
+    }
+}
+
+/*====================================
+    brand-content css
+====================================*/
+.brand-logo .brand-slider .brand-content a span img {
+    -webkit-filter: opacity(0.3) grayscale(1);
+    filter: opacity(0.3) grayscale(1);
+    -webkit-transition: filter 0.5s ease-in-out;
+    transition: filter 0.5s ease-in-out;
+}
+.brand-logo .brand-slider .brand-content:hover a span img {
+    -webkit-filter: opacity(1) grayscale(0);
+    filter: opacity(1) grayscale(0);
+}
+@media (min-width: 768px) {
+    .brand-logo .brand-slider .brand-content a span {
+        width: 144px;
+    }
+}
+@media (min-width: 992px) {
+    .brand-logo .brand-slider .brand-content a span {
+        width: 160px;
+    }
+}
+@media (min-width: 1200px) {
+    .brand-logo .brand-slider .brand-content a span {
+        width: 176px;
+    }
+}
+/************************************* brand-logo css end *************************************/
+
+/************************************* home-about css start *************************************/
+/*====================================
+    home-about-banner css
+====================================*/
+.home-about .home-about-banner img {
+    -webkit-filter: brightness(0.9);
+    filter: brightness(0.9);
+}
+@media (min-width: 768px) {
+    .home-about .home-about-banner img {
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+/*====================================
+    home-about-text-img css
+====================================*/
+.home-about .home-about-text-img {
+    margin: 0 -16.66%;
+    transform: translateY(16.66%);
+}
+.home-about .home-about-text-img img {
+    opacity: 0.7;
+}
+/************************************* home-about css end *************************************/
+
+/************************************* testimonial css start *************************************/
+/*====================================
+    testimonial slider-swiper css
+====================================*/
+.testimonial .testi-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+    width: 100%;
+}
+@media (min-width: 1200px) {
+    .testimonial .testi-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 50%;
+    }
+}
+/************************************* testimonial css end *************************************/
+
+/************************************* service css start *************************************/
+/*====================================
+    service-content css
+====================================*/
+.service-area .service-content .service-icon {
+    -webkit-transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+}
+.service-area .service-content:hover .service-icon {
+    transform: translateY(-10px);
+}
+/************************************* service css end *************************************/

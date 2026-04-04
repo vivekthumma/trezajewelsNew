@@ -1,0 +1,588 @@
+/* ========================================
+   HOME PAGE MODERN DESIGN - TREZA JEWELS
+   ======================================== */
+
+:root {
+    --primary-gold: #c9a961;
+    --primary-dark: #2c2c2c;
+    --light-bg: #f8f6f3;
+    --white: #ffffff;
+    --text-muted: #7a7a7a;
+    --border-light: #e5ddd0;
+}
+
+/* ========================================
+   SLIDER STYLES
+   ======================================== */
+.slider-content {
+    position: relative;
+    overflow: hidden;
+    background: var(--white);
+}
+
+.home-slider {
+    position: relative;
+}
+
+.home-slider .swiper-slide {
+    height: auto;
+}
+
+.slider-sub-title {
+    color: var(--primary-gold);
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .slider-sub-title {
+        font-size: 16px;
+    }
+}
+
+/** Slider Title */
+.home-slider h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--primary-dark);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 767px) {
+    .home-slider h2 {
+        font-size: 32px;
+    }
+}
+
+@media (min-width: 768px) {
+    .home-slider h2 {
+        font-size: 48px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .home-slider h2 {
+        font-size: 56px;
+    }
+}
+
+/** Slider Features */
+.slider-feature {
+    margin: 2rem 0;
+}
+
+.slider-feature ul {
+    list-style: none;
+    padding: 0;
+}
+
+.slider-feature li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.slider-feature i {
+    color: var(--primary-gold);
+    min-width: 20px;
+    margin-right: 12px;
+    margin-top: 2px;
+}
+
+/** Slider Navigation */
+.swiper-prev-homeslider,
+.swiper-next-homeslider {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-gold);
+    border: none;
+    border-radius: 50%;
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.swiper-prev-homeslider {
+    left: 30px;
+}
+
+.swiper-next-homeslider {
+    right: 30px;
+}
+
+.swiper-prev-homeslider:hover,
+.swiper-next-homeslider:hover {
+    background: var(--primary-dark);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+}
+
+@media (max-width: 768px) {
+    .swiper-prev-homeslider,
+    .swiper-next-homeslider {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .swiper-prev-homeslider {
+        left: 15px;
+    }
+
+    .swiper-next-homeslider {
+        right: 15px;
+    }
+}
+
+/* ========================================
+   CATEGORY SLIDER SECTION
+   ======================================== */
+.category-slider {
+    background: var(--light-bg);
+    padding: 60px 0;
+}
+
+.category-slider .section-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--primary-dark);
+    font-size: 36px;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .category-slider .section-title h2 {
+        font-size: 42px;
+    }
+}
+
+.category-slider p {
+    color: var(--text-muted);
+    font-size: 16px;
+    margin-top: 1rem;
+}
+
+/** Category Card */
+.category-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-light);
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(201, 169, 97, 0.2);
+    border-color: var(--primary-gold);
+}
+
+.category-icon {
+    margin-bottom: 1.5rem;
+}
+
+.category-icon .rounded-circle {
+    width: 80px;
+    height: 80px;
+    background: var(--light-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover .category-icon .rounded-circle {
+    background: var(--primary-gold);
+}
+
+.category-icon i {
+    font-size: 40px;
+    color: var(--primary-gold);
+    transition: all 0.3s ease;
+}
+
+.category-card:hover .category-icon i {
+    color: var(--white);
+}
+
+.category-card h6 {
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+}
+
+.category-card p {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* ========================================
+   FEATURED COLLECTIONS SECTION
+   ======================================== */
+.featured-collections {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.featured-collections .section-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--primary-dark);
+    font-size: 36px;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .featured-collections .section-title h2 {
+        font-size: 42px;
+    }
+}
+
+.section-divider {
+    width: 60px;
+    height: 2px;
+    background: var(--primary-gold);
+    margin: 1rem auto;
+}
+
+.featured-collections p {
+    color: var(--text-muted);
+    font-size: 16px;
+}
+
+/** Collection Section Header */
+.collection-section {
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.section-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin: 0;
+    font-size: 24px;
+}
+
+@media (min-width: 768px) {
+    .section-header h3 {
+        font-size: 28px;
+    }
+}
+
+/** Product Card */
+.product-card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+}
+
+.product-card a.d-block {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+    background: var(--light-bg);
+}
+
+.product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.08);
+}
+
+.product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-card:hover .product-overlay {
+    opacity: 1;
+}
+
+.product-overlay .btn {
+    background: var(--primary-gold);
+    color: var(--white);
+    border: none;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 8px 20px;
+}
+
+.product-overlay .btn:hover {
+    background: var(--primary-dark);
+}
+
+.product-card .p-4 {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card h6 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+@media (min-width: 768px) {
+    .product-card h6 {
+        font-size: 16px;
+    }
+}
+
+.product-card h6 a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.product-card h6 a:hover {
+    color: var(--primary-gold);
+}
+
+.product-card .d-flex.align-items-center {
+    margin-top: auto;
+}
+
+.product-card .price-box {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-gold);
+}
+
+.product-card .btn-sm {
+    padding: 8px 12px;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.product-card .btn-sm i {
+    font-size: 14px;
+}
+
+/* ========================================
+   TRENDING PRODUCTS SECTION
+   ======================================== */
+.trending-products {
+    background: var(--light-bg);
+    padding: 80px 0;
+}
+
+.trending-products .section-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--primary-dark);
+    font-size: 36px;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .trending-products .section-title h2 {
+        font-size: 42px;
+    }
+}
+
+/* ========================================
+   CALL TO ACTION SECTION
+   ======================================== */
+.cta-section {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #3d3d3d 100%);
+    padding: 60px 0;
+    color: var(--white);
+}
+
+.cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--white);
+    font-size: 32px;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .cta-section h2 {
+        font-size: 40px;
+    }
+}
+
+.cta-section p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    margin-top: 1rem;
+}
+
+.cta-section .btn {
+    background: var(--primary-gold);
+    color: var(--white);
+    border: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    padding: 14px 40px;
+}
+
+.cta-section .btn:hover {
+    background: var(--white);
+    color: var(--primary-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   SECTION PADDING UTILITIES
+   ======================================== */
+.section-ptb {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+    .section-ptb {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
+
+.section-pb {
+    padding-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+    .section-pb {
+        padding-bottom: 80px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+@media (max-width: 575px) {
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section-header h3 {
+        font-size: 20px;
+        margin-bottom: 1rem;
+    }
+
+    .product-card a.d-block {
+        height: 200px;
+    }
+
+    .cta-section {
+        text-align: center;
+    }
+
+    .cta-section .row {
+        flex-direction: column;
+    }
+
+    .cta-section .text-end {
+        text-align: center !important;
+        margin-top: 1.5rem;
+    }
+}
+
+/* ========================================
+   ANIMATION UTILITIES
+   ======================================== */
+@media (prefers-reduced-motion: no-preference) {
+    .product-card,
+    .category-card {
+        animation: fadeInUp 0.6s ease;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   SWIPER PAGINATION
+   ======================================== */
+.swiper-pagination-homeslider {
+    bottom: 20px;
+    z-index: 10;
+}
+
+.swiper-pagination-homeslider .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+    width: 12px;
+    height: 12px;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-homeslider .swiper-pagination-bullet-active {
+    background: var(--primary-gold);
+    width: 30px;
+    border-radius: 6px;
+}

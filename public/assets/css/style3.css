@@ -1,0 +1,460 @@
+/************************************* newsletter-modal css start *************************************/
+/*====================================
+    newsletter-modal css
+====================================*/
+@media (min-width: 768px) {
+    .newsletter-modal .modal-dialog {
+        max-width: 750px;
+    }
+}
+
+/* newsletter-modal newsletter-content css */
+.newsletter-modal .newsletter-content .newsletter-form form.news-form .news-wrap {
+    border-color: var(--dominant-font-color);
+}
+.newsletter-modal .newsletter-content .newsletter-form form.news-form .news-wrap input::placeholder {
+    color: var(--dominant-font-color);
+}
+@media (min-width: 768px) {
+    .newsletter-modal .newsletter-content img {
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+/************************************* newsletter-modal css start *************************************/
+
+/************************************* home-slider css start *************************************/
+/*====================================
+    home-slider swiper css
+====================================*/
+.slider-content .home-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+    width: 100%;
+}
+@media (min-width: 576px) {
+    .slider-content .home-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 50%;
+    }
+}
+@media (min-width: 992px) {
+    .slider-content .home-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 33.33%;
+    }
+}
+
+/* home-slider slider-info css */
+.slider-content .home-slider .slider-info::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(0deg, #1E1E1E 0%, transparent);
+    opacity: 0.4;
+}
+.slider-content .home-slider .slider-info img {
+    object-fit: cover;
+    object-position: center;
+}
+@media (min-width: 1200px) {
+    .slider-content .home-slider .slider-info .slider-info-content {
+        transform: translateY(100px);
+        -webkit-transition: transform 0.5s ease-in-out;
+        transition: transform 0.5s ease-in-out;
+    }
+    .slider-content .home-slider .slider-info:hover .slider-info-content {
+        transform: translateY(0px);
+    }
+    .slider-content .home-slider .slider-info .slider-info-content .slider-btn {
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: opacity 0.5s ease-in-out,visibility 0.5s ease-in-out;
+        transition: opacity 0.5s ease-in-out,visibility 0.5s ease-in-out;
+    }
+    .slider-content .home-slider .slider-info:hover .slider-info-content .slider-btn {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@media (min-width: 1600px) {
+    .slider-content .home-slider .slider-info .slider-info-content h2 {
+        font-size: 80px;
+    }
+}
+
+/* home-slider slider-navigation css */
+.slider-content .swiper-buttons.swiper-buttons-homeslider .swiper-buttons-wrap button {
+    color: var(--secondary-font-color);
+    width: 40px;
+    height: 40px;
+    background-color: var(--extra-font-color);
+    -webkit-transition: color 0.5s ease-in-out,background-color 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out,background-color 0.5s ease-in-out;
+}
+.slider-content .swiper-buttons.swiper-buttons-homeslider .swiper-buttons-wrap button:hover {
+    color: var(--extra-font-color);
+    background-color: var(--dominant-font-color);
+}
+@media (min-width: 1600px) {
+    .slider-content .swiper-buttons.swiper-buttons-homeslider .swiper-buttons-wrap button {
+        width: 56px;
+        height: 56px;
+    }
+}
+
+/* home-slider slider-dot css */
+.slider-content .swiper-dots.swiper-dots-homeslider .swiper-pagination {
+    width: unset;
+    position: unset;
+    margin: -5px 0px 0px -5px;
+}
+.slider-content .swiper-dots.swiper-dots-homeslider .swiper-pagination span.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    margin: 5px 0px 0px 5px;
+    opacity: 1;
+    border: 1px solid var(--extra-font-color);
+}
+.slider-content .swiper-dots.swiper-dots-homeslider .swiper-pagination span.swiper-pagination-bullet:hover,
+.slider-content .swiper-dots.swiper-dots-homeslider .swiper-pagination span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: var(--extra-font-color);
+    border-color: var(--extra-font-color);
+}
+
+/*====================================
+    home-inner-slider swiper css
+====================================*/
+@media (min-width: 1500px) {
+    .slider-content .home-slider .slider-inner-info {
+        width: 75%;
+    }
+}
+@media (min-width: 1700px) {
+    .slider-content .home-slider .slider-inner-info {
+        width: 66.66%;
+    }
+}
+@media (min-width: 1800px) {
+    .slider-content .home-slider .slider-inner-info {
+        width: 58.33%;
+    }
+}
+
+/* home-inner-slider swiper css */
+.slider-content .home-slider .home-inner-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+    width: 100%;
+}
+
+/* home-slider slider-navigation css */
+.slider-content .home-slider .slider-inner-info .swiper-buttons.swiper-buttons-homeinner .swiper-buttons-wrap button {
+    color: var(--secondary-font-color);
+    width: 40px;
+    height: 40px;
+    background-color: var(--extra-font-color);
+    -webkit-transition: color 0.5s ease-in-out,background-color 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out,background-color 0.5s ease-in-out;
+}
+.slider-content .home-slider .slider-inner-info .swiper-buttons.swiper-buttons-homeinner .swiper-buttons-wrap button:hover {
+    color: var(--extra-font-color);
+    background-color: var(--dominant-font-color);
+}
+.slider-content .home-slider .slider-inner-info .swiper-buttons.swiper-buttons-homeinner button.swiper-prev {
+    transform: translate(-50%, -50%);
+}
+.slider-content .home-slider .slider-inner-info .swiper-buttons.swiper-buttons-homeinner button.swiper-next {
+    transform: translate(50%, -50%);
+}
+
+/* home-slider slider-dot css */
+.slider-content .home-slider .slider-inner-info .swiper-dots.swiper-dots-homeinner .swiper-pagination {
+    width: unset;
+    position: unset;
+    margin: -5px 0px 0px -5px;
+}
+.slider-content .home-slider .slider-inner-info .swiper-dots.swiper-dots-homeinner .swiper-pagination span.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    margin: 5px 0px 0px 5px;
+    opacity: 1;
+    border: 1px solid var(--dominant-font-color);
+}
+.slider-content .home-slider .slider-inner-info .swiper-dots.swiper-dots-homeinner .swiper-pagination span.swiper-pagination-bullet:hover,
+.slider-content .home-slider .slider-inner-info .swiper-dots.swiper-dots-homeinner .swiper-pagination span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: var(--dominant-font-color);
+    border-color: var(--dominant-font-color);
+}
+/************************************* home-slider css end *************************************/
+
+/************************************* service-area css start *************************************/
+/*====================================
+    sservice-area css
+====================================*/
+.service-area .service-content span.service-icon {
+    -webkit-transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+}
+.service-area .service-content:hover span.service-icon {
+    transform: translateY(-10px);
+}
+/************************************* service-area css end *************************************/
+
+/************************************* category-slider css start *************************************/
+/*====================================
+    category-slider swiper css
+====================================*/
+.category-slider .cat-slider {
+    margin-top: -30px;
+}
+.category-slider .cat-slider .swiper-slide {
+    padding-top: 30px;
+}
+.category-slider .cat-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+    width: 100%;
+}
+@media (min-width: 576px) {
+    .category-slider .cat-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 50%;
+    }
+}
+@media (min-width: 992px) {
+    .category-slider .cat-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 33.33%;
+    }
+}
+@media (min-width: 1200px) {
+    .category-slider .cat-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 25%;
+    }
+}
+
+/*====================================
+    cat-block css
+====================================*/
+.category-slider .cat-slider .cat-block {
+    position: relative;
+    z-index: 1;
+}
+.category-slider .cat-slider .cat-block::before {
+    content: "";
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--body-bgcolor);
+    z-index: -1;
+}
+.category-slider .cat-slider .cat-block span.cat-img {
+    animation: MoveUpDown 5s linear infinite;
+}
+
+/* MoveUpDown keyframes css */
+@-webkit-keyframes MoveUpDown {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+}
+@keyframes MoveUpDown {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+}
+/************************************* category-slider css end *************************************/
+
+/************************************* banner-area css start *************************************/
+/*====================================
+    banner-area css
+====================================*/
+@media (min-width: 1600px) {
+    .banner-area .banner-block .banner-content a {
+        padding-top: 13px;
+        padding-bottom: 13px;
+    }
+}
+@media (min-width: 1800px) {
+    .banner-area .banner-block .banner-content .banner-subtitle {
+        margin-bottom: 18px;
+    }
+    .banner-area .banner-block .banner-content h2 {
+        font-size: 40px;
+    }
+    .banner-area .banner-block .banner-content a {
+        padding: 12px 30px;
+    }
+}
+
+/*====================================
+    banner-scroll-text css
+====================================*/
+.banner-scroll-text {
+    transform: skewY(-5deg);
+}
+.banner-scroll-text::before, .banner-scroll-text::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: 1px;
+    background-color: var(--extra-font-color);
+    opacity: 0.1;
+}
+.banner-scroll-text::before {
+    top: 0;
+}
+.banner-scroll-text::after {
+    bottom: 0;
+}
+.banner-scroll-text .banner-scroll-text-row {
+    -webkit-animation: slide-left 40s linear infinite;
+    animation: slide-left 40s linear infinite;
+}
+.banner-scroll-text:hover .banner-scroll-text-row,
+.banner-scroll-text:focus .banner-scroll-text-row {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused
+}
+.banner-scroll-text .banner-scroll-text-row span::after {
+    content: "\ea81";
+    font-family: remixicon !important;
+    margin: 0px 15px;
+}
+@media (min-width: 576px) {
+    .banner-scroll-text .banner-scroll-text-row span::after {
+        margin: 0px 30px;
+    }
+}
+/************************************* banner-area css end *************************************/
+
+/************************************* deal-area css start *************************************/
+/*====================================
+    deal-area swiper css
+====================================*/
+.deal-area-banner .deal-area .brand-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+    width: 100%;
+}
+
+/*====================================
+    deal-banner css
+====================================*/
+.deal-area-banner .deal-banner img {
+    -webkit-filter: brightness(0.9);
+    filter: brightness(0.9);
+}
+@media (min-width: 992px) {
+    .deal-area-banner .deal-banner img {
+        object-fit: cover;
+        object-position: center;
+    }
+}
+/************************************* deal-area css end *************************************/
+
+/************************************* testimonial css start *************************************/
+/*====================================
+    testimonial swiper css
+====================================*/
+.testimonial .testi-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+    width: 100%;
+}
+@media (min-width: 576px) {   
+    .testimonial {
+        overflow-x: hidden;
+    }
+    .testimonial .testi-slider {
+        margin: 0px calc(-100% - 30px);
+    }
+    .testimonial .testi-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 33.33%;
+    }
+}
+@media (min-width: 1400px) {
+    .testimonial .testi-slider {
+        margin: 0px calc(-50% - 15px);
+    }
+    .testimonial .testi-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 25%;
+    }
+}
+
+/*====================================
+    testi-content css
+====================================*/
+.testimonial .testi-slider .testi-content .testi-img {
+    width: 200px;
+}
+.testimonial .testi-slider .testi-content .testi-img img {
+    -webkit-filter: brightness(0.9);
+    filter: brightness(0.9);
+    border-radius: var(--border-radius);
+}
+@media (min-width: 768px) {    
+    .testimonial .testi-slider .testi-content .testi-info {
+        width: calc(100% - 200px);
+    }
+    .testimonial .testi-slider .testi-content .testi-img img {
+        border-radius: 0px;
+    }
+}
+/************************************* testimonial css end *************************************/
+
+/************************************* brand-logo css start *************************************/
+/*====================================
+    brand-logo swiper css
+====================================*/
+.brand-logo .brand-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+    width: 50%;
+}
+@media (min-width: 576px) {
+    .brand-logo .brand-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 33.33%;
+    }
+}
+@media (min-width: 992px) {
+    .brand-logo .brand-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 25%;
+    }
+}
+@media (min-width: 1200px) {
+    .brand-logo .brand-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 20%;
+    }
+}
+
+/*====================================
+    brand-content css
+====================================*/
+.brand-logo .brand-slider .brand-content a span img {
+    -webkit-filter: opacity(0.3) grayscale(1);
+    filter: opacity(0.3) grayscale(1);
+    -webkit-transition: filter 0.5s ease-in-out;
+    transition: filter 0.5s ease-in-out;
+}
+.brand-logo .brand-slider .brand-content:hover a span img {
+    -webkit-filter: opacity(1) grayscale(0);
+    filter: opacity(1) grayscale(0);
+}
+@media (min-width: 768px) {
+    .brand-logo .brand-slider .brand-content a span {
+        width: 144px;
+    }
+}
+@media (min-width: 992px) {
+    .brand-logo .brand-slider .brand-content a span {
+        width: 160px;
+    }
+}
+@media (min-width: 1200px) {
+    .brand-logo .brand-slider .brand-content a span {
+        width: 176px;
+    }
+}
+/************************************* brand-logo css end *************************************/
+

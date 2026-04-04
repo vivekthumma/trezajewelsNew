@@ -1,0 +1,575 @@
+/************************************* newsletter-modal css start *************************************/
+/*====================================
+    newsletter-modal css
+====================================*/
+.newsletter-modal .newsletter-info .newsletter-content .newsletter-form .news-wrap input {
+    border-radius: var(--border-radius) 0px 0px var(--border-radius);
+}
+.newsletter-modal .newsletter-info .newsletter-content .newsletter-form .news-wrap button {
+    border-radius: 0px var(--border-radius) var(--border-radius) 0px;
+}
+/************************************* newsletter-modal css end *************************************/
+
+/************************************* home-slider css start *************************************/
+/*====================================
+    home-slider swiper css
+====================================*/
+.slider-content .home-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+    width: 100%;
+}
+
+/*====================================
+    slider-image css
+====================================*/
+.slider-content .home-slider .slider-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(0deg, #000000 8.33%, transparent);
+    opacity: 0.4;
+}
+
+/*====================================
+    slider-video css
+====================================*/
+.slider-content .home-slider .slider-image video {
+    display: none;
+    object-fit: cover;
+    object-position: center;
+}
+
+/*====================================
+    slider-text-info css
+====================================*/
+.slider-content .home-slider .slider-text-info .slider-sub-title span {
+    border-bottom: 2px solid var(--dominant-font-color);
+}
+.slider-content .home-slider .slider-text-info h2 {
+    line-height: 1.04;
+}
+@media (min-width: 1600px) {
+    .slider-content .home-slider .slider-text-info .slider-sub-title {
+        margin-bottom: 25px;
+    }
+    .slider-content .home-slider .slider-text-info h2 {
+        font-size: 120px;
+    }
+}
+
+/*====================================
+    slider-video-info css
+====================================*/
+.slider-content .home-slider .slider-video-info .slider-video-img img {
+    object-fit: cover;
+    object-position: center;
+}
+.slider-content .home-slider .slider-video-info .slider-button {
+    writing-mode: vertical-rl;
+    -ms-writing-mode: vertical-rl;
+}
+.slider-content .home-slider .slider-video-info .slider-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 1px;
+    border-left: 1px dashed var(--extra-font-color);
+    opacity: 0.5;
+}
+.slider-content .home-slider .slider-video-info .slider-button a {
+    transform: rotate(-180deg);
+}
+.slider-content .home-slider .slider-video-info .slider-button .slider-video-gif {
+    left: -12px;
+    transform: rotate(90deg);
+    animation: scissors-bottom 4s linear infinite;
+}
+
+/* scissors-bottom keyframes css */
+@-webkit-keyframes scissors-bottom {
+    0% {
+        bottom: 0;
+    }
+    100% {
+        bottom: 100%;
+    }
+}
+@keyframes scissors-bottom {
+    0% {
+        bottom: 0;
+    }
+    100% {
+        bottom: 100%;
+    }
+}
+
+/*====================================
+    slider-content transition css
+====================================*/
+.slider-content .home-slider.swiper .swiper-slide .slider-text-info .slider-sub-title,
+.slider-content .home-slider.swiper .swiper-slide .slider-text-info .slider-title-btn h2,
+.slider-content .home-slider.swiper .swiper-slide .slider-text-info .slider-title-btn .slider-btn {
+    opacity: 0;
+}
+.slider-content .home-slider.swiper .swiper-slide.swiper-slide-active .slider-text-info .slider-sub-title,
+.slider-content .home-slider.swiper .swiper-slide.swiper-slide-active .slider-text-info .slider-title-btn h2,
+.slider-content .home-slider.swiper .swiper-slide.swiper-slide-active .slider-text-info .slider-title-btn .slider-btn {
+    opacity: 1;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.slider-content .home-slider.swiper .swiper-slide.swiper-slide-active .slider-text-info .slider-sub-title,
+.slider-content .home-slider.swiper .swiper-slide.swiper-slide-active .slider-text-info .slider-title-btn h2,
+.slider-content .home-slider.swiper .swiper-slide.swiper-slide-active .slider-text-info .slider-title-btn .slider-btn {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+.slider-content .home-slider.swiper .swiper-slide.swiper-slide-active .slider-text-info .slider-sub-title {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+}
+.slider-content .home-slider.swiper .swiper-slide.swiper-slide-active .slider-text-info .slider-title-btn h2 {
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+    -webkit-animation-duration: 0.6s;
+    animation-duration: 0.6s;
+}
+.slider-content .home-slider.swiper .swiper-slide.swiper-slide-active .slider-text-info .slider-title-btn .slider-btn {
+    -webkit-animation-delay: 0.9s;
+    animation-delay: 0.9s;
+    -webkit-animation-duration: 0.9s;
+    animation-duration: 0.9s;
+}
+
+/*====================================
+    slider-navigation css
+====================================*/
+.slider-content .home-slider.swiper .swiper-buttons .swiper-buttons-wrap button {
+    color: var(--heading-font-color);
+    font-size: 20px;
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+    background-color: var(--extra-font-color);
+    border-radius: 50%;
+    -webkit-transition: color 0.5s ease-in-out,background-color 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out,background-color 0.5s ease-in-out;
+}
+.slider-content .home-slider.swiper .swiper-buttons .swiper-buttons-wrap button.swiper-prev {
+    left: 5px;
+}
+.slider-content .home-slider.swiper .swiper-buttons .swiper-buttons-wrap button.swiper-next {
+    right: 5px;
+}
+.slider-content .home-slider.swiper .swiper-buttons .swiper-buttons-wrap button:hover {
+    color: var(--extra-font-color);
+    background-color: var(--dominant-font-color);
+}
+@media (min-width: 1400px) {
+    .slider-content .home-slider.swiper .swiper-buttons .swiper-buttons-wrap button.swiper-prev {
+        left: 15px;
+    }
+    .slider-content .home-slider.swiper .swiper-buttons .swiper-buttons-wrap button.swiper-next {
+        right: 15px;
+    }
+}
+@media (min-width: 1600px) {
+    .slider-content .home-slider.swiper .swiper-buttons .swiper-buttons-wrap button {
+        width: 56px;
+        height: 56px;
+    }
+    .slider-content .home-slider.swiper .swiper-buttons .swiper-buttons-wrap button.swiper-prev {
+        left: 100px;
+    }
+    .slider-content .home-slider.swiper .swiper-buttons .swiper-buttons-wrap button.swiper-next {
+        right: 100px;
+    }
+}
+
+/*====================================
+    slider-dot css
+====================================*/
+.slider-content .home-slider.swiper .swiper-dots {
+    bottom: 15px;
+}
+.slider-content .home-slider.swiper .swiper-dots .swiper-pagination {
+    width: unset;
+    position: unset;
+    margin: -5px 0px 0px -5px;
+}
+.slider-content .home-slider.swiper .swiper-dots .swiper-pagination span.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    margin: 5px 0px 0px 5px;
+    opacity: 1;
+    border: 1px solid var(--extra-font-color);
+}
+.slider-content .home-slider.swiper .swiper-dots .swiper-pagination span.swiper-pagination-bullet:hover,
+.slider-content .home-slider.swiper .swiper-dots .swiper-pagination span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: var(--extra-font-color);
+    border-color: var(--extra-font-color);
+}
+@media (min-width: 576px) {
+    .slider-content .home-slider.swiper .swiper-dots {
+        bottom: 30px;
+    }
+}
+/************************************* home-slider css end *************************************/
+
+/************************************* home-about css start *************************************/
+/*====================================
+    home-about css
+====================================*/
+.home-about span.home-abount-icon img {
+    animation: MoveUpDown 5s linear infinite;
+}
+
+/* MoveUpDown keyframes css */
+@-webkit-keyframes MoveUpDown {
+    0%, 100% {
+        transform: translateY(-15px);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+}
+@keyframes MoveUpDown {
+    0%, 100% {
+        transform: translateY(-15px);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+}
+/************************************* home-about css end *************************************/
+
+/************************************* category-slider css start *************************************/
+/*====================================
+    category-slider swiper css
+====================================*/
+.category-slider .cat-slider {
+    margin-top: -25px;
+}
+.category-slider .cat-slider .swiper-slide {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.category-slider .cat-slider .swiper-slide .cat-inner-slider .swiper-slide {
+    padding: 0px;
+}
+.category-slider .cat-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+    width: 100%;
+}
+@media (min-width: 576px) {
+    .category-slider {
+        overflow-x: hidden;
+    }
+    .category-slider .cat-slider {
+        margin-left: calc(-50% - 15px);
+        margin-right: calc(-50% - 15px);
+    }
+    .category-slider .cat-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 25%;
+    }
+}
+@media (min-width: 768px) {
+    .category-slider .cat-slider {
+        margin-left: calc(-33.33% - 10px);
+        margin-right: calc(-33.33% - 10px);
+    }
+    .category-slider .cat-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 20%;
+    }
+}
+@media (min-width: 1200px) {
+    .category-slider .cat-slider {
+        margin-left: calc(-25% - 7.5px);
+        margin-right: calc(-25% - 7.5px);
+    }
+    .category-slider .cat-slider .swiper-slide {
+        padding-bottom: 0px;
+    }
+    .category-slider .cat-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 16.66%;
+    }
+}
+
+/*====================================
+    category-slider cat-content css
+====================================*/
+.category-slider .cat-slider .cat-block a.cat-img .cat-content {
+    transform: translateY(-10px);
+}
+.category-slider .cat-slider .cat-block span.cat-btn-mobile {
+    transform: translateY(calc(100% - 25px));
+}
+.category-slider .cat-slider .cat-block span.cat-btn-mobile a,
+.category-slider .cat-slider .cat-block span.cat-btn a {
+    height: 50px;
+}
+@media (min-width: 576px) {
+    .category-slider .cat-slider .cat-block a.cat-img .cat-content {
+        transform: translateY(-20px);
+    }
+}
+@media (min-width: 1200px) {
+    .category-slider .cat-slider .cat-block:hover {
+        transform: translateY(-25px);
+    }
+    .category-slider .cat-slider .cat-block a.cat-img .cat-content {
+        transform: translateY(0px);
+    }
+    .category-slider .cat-slider .cat-block:hover a.cat-img .cat-content {
+        transform: translateY(-20px);
+    }
+    .category-slider .cat-slider .cat-block span.cat-btn {
+        transform: translateY(100%);
+    }
+    .category-slider .cat-slider .cat-block:hover span.cat-btn {
+        transform: translateY(calc(100% - 25px));
+    }
+    .category-slider .cat-slider .cat-block,
+    .category-slider .cat-slider .cat-block a.cat-img .cat-content,
+    .category-slider .cat-slider .cat-block span.cat-btn {
+        -webkit-transition: transform 0.5s ease-in-out;
+        transition: transform 0.5s ease-in-out;
+    }
+}
+
+/*====================================
+    category-slider cat-text-block css
+====================================*/
+.category-slider .cat-slider .cat-text-block {
+    position: relative;
+    z-index: 1;
+}
+.category-slider .cat-slider .cat-text-block::before,
+.category-slider .cat-slider .cat-text-block::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border: 1px solid var(--extra-font-color);
+    opacity: 0.1;
+}
+.category-slider .cat-slider .cat-text-block::before {
+    top: 30px;
+    right: 45px;
+    bottom: 30px;
+    left: 30px;
+}
+.category-slider .cat-slider .cat-text-block::after {
+    top: 60px;
+    right: 0px;
+    bottom: 0px;
+    left: 60px;
+}
+
+/*====================================
+    cat-inner-wrap swiper css
+====================================*/
+.category-slider .cat-slider .cat-inner-wrap .cat-inner-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+    width: 100%;
+}
+
+/*====================================
+    slider-arrow css
+====================================*/
+.category-slider .cat-inner-wrap {
+    position: relative;
+}
+.category-slider .cat-inner-wrap .swiper-buttons {
+    display: none;
+    margin: 0px;
+    line-height: 0;
+}
+.category-slider .cat-inner-wrap .swiper-buttons .swiper-buttons-wrap {
+    display: block;
+}
+
+/* slider-arrow button css */
+.category-slider .cat-inner-wrap .swiper-buttons button {
+    color: var(--extra-font-color);
+    font-size: 16px;
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);
+    width: 32px;
+    height: 32px;
+    background-color: var(--secondary-font-color);
+    z-index: 1;
+    border: 1px solid var(--secondary-font-color);
+    border-radius: 100%;
+    box-shadow: rgba(var(--box-shadow-outer),var(--box-shadow-outer-opacity));
+    -webkit-transition: color 0.5s ease-in-out,background-color 0.5s ease-in-out,border-color 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out,background-color 0.5s ease-in-out,border-color 0.5s ease-in-out;
+}
+.category-slider .cat-inner-wrap .swiper-buttons button:hover {
+    color: var(--extra-font-color);
+    background-color: var(--dominant-font-color);
+    border-color: var(--dominant-font-color);
+}
+.category-slider .cat-inner-wrap .swiper-buttons button.swiper-prev {
+    left: 15px;
+}
+.category-slider .cat-inner-wrap .swiper-buttons button.swiper-next {
+    right: 15px;
+}
+
+/*====================================
+    swiper slider-dots css
+====================================*/
+.category-slider .cat-inner-wrap .swiper-dots {
+    display: block;
+    line-height: 0;
+}
+
+/* swiper slider-dots button css */
+.category-slider .cat-inner-wrap .swiper-dots .swiper-pagination {
+    width: unset;
+    position: unset;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: -5px 0px 0px -5px;
+}
+.category-slider .cat-inner-wrap .swiper-dots .swiper-pagination span {
+    width: 10px;
+    height: 10px;
+    background-color: var(--extra-font-color);
+    margin: 5px 0px 0px 5px;
+    opacity: 0.5;
+    border: none;
+}
+.category-slider .cat-inner-wrap .swiper-dots .swiper-pagination span.swiper-pagination-bullet-active {
+    opacity: 1;
+    background-color: var(--extra-font-color);
+}
+
+/*====================================
+    category swiper-scrollbar css
+====================================*/
+.category-slider .swiper-scroll .swiper-scrollbar {
+    position: unset;
+    width: auto;
+    height: 2px;
+    cursor: pointer;
+}
+.category-slider .swiper-scroll .swiper-scrollbar-drag {
+    background-color: var(--dominant-font-color);
+    border-radius: var(--border-radius);
+}
+/************************************* category-slider css end *************************************/
+
+/************************************* brand-logo css start *************************************/
+/*====================================
+    brand-logo swiper css
+====================================*/
+.brand-logo .brand-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+    width: 50%;
+}
+@media (min-width: 576px) {
+    .brand-logo .brand-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 33.33%;
+    }
+}
+@media (min-width: 992px) {
+    .brand-logo .brand-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 25%;
+    }
+}
+@media (min-width: 1200px) {
+    .brand-logo .brand-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+        width: 20%;
+    }
+}
+
+/*====================================
+    brand-content css
+====================================*/
+.brand-logo .brand-slider .brand-content a span img {
+    -webkit-filter: opacity(0.3) grayscale(1);
+    filter: opacity(0.3) grayscale(1);
+    -webkit-transition: filter 0.5s ease-in-out;
+    transition: filter 0.5s ease-in-out;
+}
+.brand-logo .brand-slider .brand-content:hover a span img {
+    -webkit-filter: opacity(1) grayscale(0);
+    filter: opacity(1) grayscale(0);
+}
+@media (min-width: 768px) {
+    .brand-logo .brand-slider .brand-content a span {
+        width: 144px;
+    }
+}
+@media (min-width: 992px) {
+    .brand-logo .brand-slider .brand-content a span {
+        width: 160px;
+    }
+}
+@media (min-width: 1200px) {
+    .brand-logo .brand-slider .brand-content a span {
+        width: 176px;
+    }
+}
+/************************************* brand-logo css end *************************************/
+
+/************************************* service css start *************************************/
+/*====================================
+    service-content css
+====================================*/
+.service-area .service-content {
+    position: relative;
+    z-index: 1;
+}
+.service-area .service-content::before,
+.service-area .service-content::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+}
+.service-area .service-content::before {
+    top: 0;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    border: 1px solid rgba(var(--border-color),var(--border-opacity));
+    border-radius: var(--border-radius);
+    -webkit-transition: opacity 0.5s ease-in-out,visibility 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out,visibility 0.5s ease-in-out;
+}
+.service-area .service-content:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+.service-area .service-content::after {
+    height: 4px;
+    background-color: var(--dominant-font-color);
+    transform: scaleX(0);
+    -webkit-transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+}
+.service-area .service-content:hover::after {
+    transform: scaleX(-1);
+}
+/************************************* service css end *************************************/
+
+/************************************* testimonial-deal css start *************************************/
+/*====================================
+    testimonial slider-swiper css
+====================================*/
+.testimonial .testi-slider.swiper:not(.swiper-initialized) .swiper-slide:not([style]) {
+    width: 100%;
+}
+/************************************* testimonial-deal css end *************************************/

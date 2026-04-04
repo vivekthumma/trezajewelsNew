@@ -1,0 +1,251 @@
+/************************************* other-tab css start *************************************/
+/*====================================
+    other-tabs css
+====================================*/
+.other-tabs {
+    margin-top: -15px;
+}
+.other-tabs>* {
+    margin-top: 15px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(var(--border-color),var(--border-opacity));
+}
+.other-tabs>*:first-child {
+    padding-top: 0px;
+    border-top: none;
+}
+
+/*====================================
+    other-tab title css
+====================================*/
+.other-tab a[aria-expanded="true"] {
+    color: var(--dominant-font-color);
+}
+.other-tab a[aria-expanded="true"] span.other-tab-icon i::before {
+    content: "\f1af";
+}
+/************************************* other-tab css end *************************************/
+
+/************************************* index css start *************************************/
+/*====================================
+    question-index css
+====================================*/
+.question-index {
+    counter-reset: Questions;
+}
+.question-index h6::before {
+    counter-increment: Questions;
+    content: "Q." counter(Questions) " ";
+}
+
+/*====================================
+    number-index css
+====================================*/
+.number-index {
+    counter-reset: number;
+}
+.number-index .number-sub-index {
+    counter-reset: sub-number;
+}
+.number-index .number-sub-index::before {
+    counter-increment: number;
+    content: counter(number) ". ";
+}
+.number-index .p-number::before {
+    counter-increment: sub-number;
+    content: counter(number) "."counter(sub-number)" ";
+}
+/************************************* index css end *************************************/
+
+/************************************* about-us css start *************************************/
+/*====================================
+    about-us css
+====================================*/
+.about-us .row.about-area {
+    margin-top: -30px;
+}
+.about-us .row.about-area>* {
+    margin-top: 30px;
+}
+@media (min-width: 992px) {
+    .about-us .row.about-area,
+    .about-us .row.about-area>* {
+        margin-top: 0px;
+    }
+}
+
+/*====================================
+    about-counter css
+====================================*/
+.about-counter .about-counter-content .about-counter-info {
+    border-bottom: 1px solid rgba(var(--border-color),var(--border-opacity));
+}
+.about-counter .about-counter-content .about-counter-info:nth-last-child(-n+2) {
+    border-bottom: none;
+}
+.about-counter .about-counter-content .about-counter-info:nth-child(n+1):not(:nth-child(2n)) {
+    border-right: 1px solid rgba(var(--border-color),var(--border-opacity));
+}
+@media (min-width: 992px) {
+    .about-counter .about-counter-content .about-counter-info {
+        border-right: 1px solid rgba(var(--border-color),var(--border-opacity));
+    }
+    .about-counter .about-counter-content .about-counter-info:nth-child(4n) {
+        border-right: none;
+    }
+    .about-counter .about-counter-content .about-counter-info:nth-last-child(-n+4) {
+        border-bottom: none;
+    }
+}
+/************************************* about-us css end *************************************/
+
+/************************************* about-us2 css start *************************************/
+/*====================================
+    about-future css
+====================================*/
+.about-future .about-future-content img {
+    -webkit-transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+}
+.about-future .about-future-content:hover img {
+    transform: translateY(-10px);
+}
+/************************************* about-us2 css end *************************************/
+
+/************************************* about-us3 css start *************************************/
+/*====================================
+    about-feature-counter css
+====================================*/
+.about-feature-counter .about-feature-counter-info {
+    position: relative;
+    z-index: 1;
+}
+.about-feature-counter .about-feature-counter-info::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--dominant-font-color);
+    z-index: -1;
+}
+/************************************* about-us3 css end *************************************/
+
+/************************************* contact-us css start *************************************/
+/*====================================
+    contact-map css
+====================================*/
+.contact-map iframe {
+    height: 320px;
+}
+@media (min-width: 576px) {
+    .contact-map iframe {
+        height: 400px;
+    }
+}
+@media (min-width: 1200px) {
+    .contact-map iframe {
+        height: 500px;
+    }
+}
+/************************************* contact-us css end *************************************/
+
+/************************************* faqs css start *************************************/
+/*====================================
+    faqs-tab-title css
+====================================*/
+.faqs h6.faqs-tab-title span {
+    border-bottom: 2px solid;
+}
+/************************************* faqs css end *************************************/
+
+/************************************* privacy-policy css start *************************************/
+/*====================================
+    privacy-feature css
+====================================*/
+.privacy-feature .privacy-feature-content {
+    background-color: var(--extra-bgcolor);
+}
+.privacy-feature .privacy-feature-content:nth-child(even) {
+    background-color: var(--body-bgcolor);
+}
+/************************************* privacy-policy css end *************************************/
+
+/************************************* store css start *************************************/
+/*====================================
+    store css
+====================================*/
+.store .store-content .store-info {
+    margin-top: -13px;
+}
+.store .store-content .store-info>* {
+    margin-top: 13px;
+}
+
+/*====================================
+    store-alert-msg css
+====================================*/
+.store .store-search .store-alert-msg {
+    display: none;
+    --bs-bg-opacity: 0.1;
+    --bs-border-opacity: 0.1;
+    border: 1px solid;
+}
+.store .store-search .store-alert-msg.active {
+    display: block;
+}
+
+/*====================================
+    store-data css
+====================================*/
+.store .store-data {
+    display: none;
+}
+.store .store-data.active {
+    display: block;
+}
+/************************************* store css end *************************************/
+
+/************************************* coming-soon css start *************************************/
+/*=======================================
+    coming-desktop css
+=======================================*/
+@media (min-width: 1600px) {
+    .coming-content .coming-desktop {
+        width: 58.33%;
+    }
+}
+
+/*====================================
+    coming-soon-news css
+====================================*/
+@media (min-width: 768px) {
+    .coming-news form.coming-form .coming-wrap input.coming-notify-input {
+        border-radius: var(--border-radius) 0px 0px var(--border-radius);
+    }
+    .coming-news form.coming-form .coming-wrap button.coming-notify-btn {
+        border-radius: 0px var(--border-radius) var(--border-radius) 0px;
+    }
+}
+/************************************* coming-soon css end *************************************/
+
+/************************************* keyframes css start *************************************/
+/*====================================
+    blinking keyframes css
+====================================*/
+.blinking {
+    -webkit-animation: blinking 2s cubic-bezier(.4, 0, .6, 1) infinite;
+    animation: blinking 2s cubic-bezier(.4, 0, .6, 1) infinite;
+}
+@-webkit-keyframes blinking {
+    50% {
+        opacity: 0.5;
+    }
+}
+@keyframes blinking {
+    50% {
+        opacity: 0.5;
+    }
+}
+/************************************* keyframes css end *************************************/
