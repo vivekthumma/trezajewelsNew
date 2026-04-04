@@ -71,7 +71,9 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     // Product Routes
     Route::post('products/upload-gallery', [App\Http\Controllers\Admin\ProductController::class, 'uploadGallery'])->name('products.upload-gallery');
     Route::post('products/remove-gallery-image', [App\Http\Controllers\Admin\ProductController::class, 'removeGalleryImage'])->name('products.remove-gallery-image');
-    Route::resource('products', App\Http\Controllers\Admin\ProductController::class);
+    Route::resource('products', App\Http\Controllers\Admin\ProductController::class)->names([
+        'show' => 'admin.products.show',
+    ]);
     Route::resource('orders', App\Http\Controllers\Admin\OrderController::class)->only(['index', 'show', 'update', 'destroy']);
     Route::resource('users', App\Http\Controllers\Admin\UserController::class)->only(['index', 'show', 'destroy']);
     Route::get('/contact', [App\Http\Controllers\Admin\ContactController::class, 'index'])->name('admin.contact.index');
@@ -81,3 +83,4 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::resource('home-sections', App\Http\Controllers\Admin\HomeCategorySectionController::class);
     Route::post('/settings/update', [App\Http\Controllers\Admin\SettingController::class, 'update'])->name('settings.update');
 });
+

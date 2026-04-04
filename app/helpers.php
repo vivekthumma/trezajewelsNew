@@ -27,6 +27,6 @@ if (!function_exists('imgPath')) {
             return asset($path);
         }
         
-        return asset(env('IMG_PATH', '/uploads/') . $path);
+        return asset(env('IMG_PATH', '/public/') . $path);
     }
 }

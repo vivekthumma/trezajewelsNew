@@ -65,7 +65,7 @@
                             @endif
                         </div>
                         <div>
-                            <a href="{{ route('products.show', $product->id) }}" class="fw-bold text-dark text-decoration-none fs-14 d-block mb-1">{{ $product->name }}</a>
+                            <a href="{{ route('admin.products.show', $product->id) }}" class="fw-bold text-dark text-decoration-none fs-14 d-block mb-1">{{ $product->name }}</a>
                             <div class="text-muted small">
                                 <span class="badge bg-light text-dark border-0 p-0 fs-11 me-2">{{ $product->metal_type }}</span>
                                 <span class="badge bg-light text-dark border-0 p-0 fs-11">{{ $product->purity }}</span>
@@ -107,7 +107,7 @@
                 </td>
                 <td class="text-end pe-4">
                     <x-admin.actions 
-                        view="{{ route('products.show', $product->id) }}" 
+                        view="{{ route('admin.products.show', $product->id) }}" 
                         edit="{{ route('products.edit', $product->id) }}" 
                         delete="{{ route('products.destroy', $product->id) }}" />
                 </td>
@@ -149,3 +149,5 @@
     .text-light-gray { color: #d1d4d7; }
 </style>
 @endsection
+
+
