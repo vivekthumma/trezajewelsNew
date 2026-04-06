@@ -908,6 +908,8 @@
                         $oldPrice = parseFloat($freqOldPrice.data("old-price").replace(/[^0-9.-]+/g, ""));
                     $freqNewPrice.text(`$${$newPrice.toFixed(2)}`);
                     $freqOldPrice.text(`$${$oldPrice.toFixed(2)}`);
+                $freqNewPrice.text(`₹${$newPrice.toFixed(2)}`);
+                $freqOldPrice.text(`₹${$oldPrice.toFixed(2)}`);
                 });
                 // Recalculate totals and toggle .active class
                 $(".frequent-content input[type='checkbox']").each(function() {
@@ -929,6 +931,9 @@
                 $(".freq-new-total").text(`$${$newTotal.toFixed(2)}`).attr("data-new-total", `$${$newTotal.toFixed(2)}`);
                 $(".freq-old-total").text(`$${$oldTotal.toFixed(2)}`).attr("data-old-total", `$${$oldTotal.toFixed(2)}`);
                 $(".freq-price-save").text(`$${$priceSave.toFixed(2)}`).attr("data-price-save", `$${$priceSave.toFixed(2)}`);
+            $(".freq-new-total").text(`₹${$newTotal.toFixed(2)}`).attr("data-new-total", `₹${$newTotal.toFixed(2)}`);
+            $(".freq-old-total").text(`₹${$oldTotal.toFixed(2)}`).attr("data-old-total", `₹${$oldTotal.toFixed(2)}`);
+            $(".freq-price-save").text(`₹${$priceSave.toFixed(2)}`).attr("data-price-save", `₹${$priceSave.toFixed(2)}`);
                 $(".freq-discount-price").text($discountPrice).attr("data-discount-price", $discountPrice);
                 // Toggle buttons
                 var $totalCheckboxes = $(".frequent-content input[type='checkbox']").not(":disabled").length,
