@@ -225,9 +225,9 @@
                                                         </div>
                                                         <div class="pro-price-action">
                                                             <div class="price-box heading-weight">
-                                                                <span class="new-price dominant-color">{{ number_format($product->price, 2) }}</span>
-                                                                @if($product->discount_price)
-                                                                    <span class="old-price text-decoration-line-through">{{ number_format($product->discount_price, 2) }}</span>
+                                                                <span class="new-price dominant-color">{{ number_format($product->effectivePrice(), 2) }}</span>
+                                                                @if($product->hasDiscount())
+                                                                    <span class="old-price text-decoration-line-through">{{ number_format($product->price, 2) }}</span>
                                                                 @endif
                                                             </div>
                                                             <div class="product-action">
@@ -244,9 +244,9 @@
                                                     </div>
                                                     <div class="product-price">
                                                         <div class="price-box heading-weight">
-                                                            <span class="new-price dominant-color">{{ number_format($product->price, 2) }}</span>
-                                                            @if($product->discount_price)
-                                                                <span class="old-price"><span class="mer-3">~</span><span class="text-decoration-line-through">{{ number_format($product->discount_price, 2) }}</span></span>
+                                                            <span class="new-price dominant-color">{{ number_format($product->effectivePrice(), 2) }}</span>
+                                                            @if($product->hasDiscount())
+                                                                <span class="old-price"><span class="mer-3">~</span><span class="text-decoration-line-through">{{ number_format($product->price, 2) }}</span></span>
                                                             @endif
                                                         </div>
                                                     </div>

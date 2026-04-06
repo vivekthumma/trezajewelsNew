@@ -2290,10 +2290,6 @@
                 loop: false,
                 rewind: true,
                 slidesPerView: 5,
-                grid: {
-                    rows: 2,
-                    fill: 'row' | 'column',
-                },
                 spaceBetween: 30,
                 observer: true,
                 observeParents: true,
@@ -2314,42 +2310,18 @@
                 breakpoints: {
                     0: {
                         slidesPerView: 2,
-                        grid: {
-                            rows: 2,
-                            fill: 'row' | 'column',
-                        },
                         spaceBetween: 15
                     },
                     576: {
                         slidesPerView: 2,
-                        grid: {
-                            rows: 2,
-                            fill: 'row' | 'column',
-                        },
                         spaceBetween: 30
                     },
                     768: {
                         slidesPerView: 3,
-                        grid: {
-                            rows: 2,
-                            fill: 'row' | 'column',
-                        },
                         spaceBetween: 30
                     },
                     1200: {
-                        slidesPerView: 4,
-                        grid: {
-                            rows: 2,
-                            fill: 'row' | 'column',
-                        },
-                        spaceBetween: 30
-                    },
-                    1400: {
                         slidesPerView: 5,
-                        grid: {
-                            rows: 2,
-                            fill: 'row' | 'column',
-                        },
                         spaceBetween: 30
                     }
                 },

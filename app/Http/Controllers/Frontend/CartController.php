@@ -28,10 +28,30 @@ class CartController extends Controller
     private function getCartItems()
     {
         if (Auth::check()) {
-            return Cart::with('product')->where('user_id', Auth::id())->get();
+            $cartItems = Cart::with('product')->where('user_id', Auth::id())->get();
         } else {
-            return Cart::with('product')->where('session_id', $this->getSessionId())->get();
+            $cartItems = Cart::with('product')->where('session_id', $this->getSessionId())->get();
         }
+
+        return $this->syncCartPrices($cartItems);
+    }
+
+    private function syncCartPrices($cartItems)
+    {
+        foreach ($cartItems as $item) {
+            if (!$item->product) {
+                continue;
+            }
+
+            $effectivePrice = $item->product->effectivePrice();
+
+            if ((float) $item->price !== $effectivePrice) {
+                $item->price = $effectivePrice;
+                $item->save();
+            }
+        }
+
+        return $cartItems;
     }
 
     public function addToCart(Request $request)
@@ -44,6 +64,7 @@ class CartController extends Controller
         ]);
 
         $product = Product::findOrFail($request->product_id);
+        $effectivePrice = $product->effectivePrice();
 
         if ($product->quantity < $request->quantity) {
             return response()->json([
@@ -75,14 +96,17 @@ class CartController extends Controller
                     'message' => 'Cannot add more. Stock limit reached.'
                 ], 400);
             }
-            $cartItem->update(['quantity' => $newQuantity]);
+            $cartItem->update([
+                'quantity' => $newQuantity,
+                'price' => $effectivePrice,
+            ]);
         } else {
             Cart::create([
                 'user_id' => $userId,
                 'session_id' => $sessionId,
                 'product_id' => $product->id,
                 'quantity' => $request->quantity,
-                'price' => $product->price,
+                'price' => $effectivePrice,
                 'size' => $request->size,
                 'color' => $request->color,
             ]);
@@ -123,6 +147,7 @@ class CartController extends Controller
 
         $cartItem = Cart::findOrFail($request->cart_id);
         $product = $cartItem->product;
+        $effectivePrice = $product->effectivePrice();
 
         if ($request->quantity > $product->quantity) {
             return response()->json([
@@ -132,7 +157,10 @@ class CartController extends Controller
             ], 400);
         }
 
-        $cartItem->update(['quantity' => $request->quantity]);
+        $cartItem->update([
+            'quantity' => $request->quantity,
+            'price' => $effectivePrice,
+        ]);
 
         return response()->json(['success' => true]);
     }

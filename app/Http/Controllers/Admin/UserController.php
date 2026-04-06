@@ -14,7 +14,7 @@ class UserController extends Controller
     public function index()
     {
         // Only show registered customers (non-admins) in the customers list
-        $users = User::where('type', 'user')->latest()->paginate(10);
+        $users = User::where('type', User::TYPE_USER)->latest()->paginate(10);
         return view('admin.users.index', compact('users'));
     }
 

@@ -1,0 +1,164 @@
+/**================================
+    Cart Quantity Box - Compact Design
+==================================*/
+
+/* Quantity wrapper - compact version */
+.js-qty-wrapper {
+    display: inline-flex;
+    align-items: center;
+}
+
+.js-qty-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+/* Quantity buttons - smaller size */
+.js-qty-adjust {
+    min-width: 28px;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: var(--extra-bgcolor);
+    color: var(--body-font-color);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 14px;
+}
+
+.js-qty-adjust:hover {
+    background-color: var(--dominant-font-color);
+    color: var(--extra-font-color);
+}
+
+.js-qty-adjust i {
+    display: block;
+    line-height: 1;
+}
+
+/* Quantity input - compact */
+.js-qty-num {
+    width: 40px !important;
+    height: 28px !important;
+    padding: 0 8px !important;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    border: none !important;
+    background-color: var(--body-bgcolor) !important;
+    color: var(--heading-font-color) !important;
+    cursor: default;
+}
+
+.js-qty-num:focus {
+    outline: none;
+    background-color: var(--body-bgcolor) !important;
+}
+
+/* Cart page quantity - slightly larger */
+.cart-page-qty .js-qty-adjust {
+    min-width: 32px;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+}
+
+.cart-page-qty .js-qty-num {
+    width: 45px !important;
+    height: 32px !important;
+    font-size: 14px;
+}
+
+/* Cart drawer quantity - compact */
+.cart-drawer-qty .js-qty-adjust {
+    min-width: 26px;
+    width: 26px;
+    height: 26px;
+    font-size: 12px;
+}
+
+.cart-drawer-qty .js-qty-num {
+    width: 35px !important;
+    height: 26px !important;
+    font-size: 12px;
+    padding: 0 6px !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .js-qty-adjust {
+        min-width: 26px;
+        width: 26px;
+        height: 26px;
+        font-size: 12px;
+    }
+
+    .js-qty-num {
+        width: 35px !important;
+        height: 26px !important;
+        font-size: 12px;
+        padding: 0 6px !important;
+    }
+
+    .cart-page-qty .js-qty-adjust {
+        min-width: 28px;
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    .cart-page-qty .js-qty-num {
+        width: 40px !important;
+        height: 28px !important;
+        font-size: 13px;
+    }
+}
+
+/* Disabled state */
+.js-qty-adjust:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Focus state for accessibility */
+.js-qty-adjust:focus {
+    outline: 2px solid var(--dominant-font-color);
+    outline-offset: -2px;
+}
+
+/* Alternative compact style with border */
+.qty-box-bordered .js-qty-wrap {
+    border: 1px solid rgba(var(--border-color), var(--border-opacity));
+}
+
+.qty-box-bordered .js-qty-adjust {
+    border-right: 1px solid rgba(var(--border-color), var(--border-opacity));
+}
+
+.qty-box-bordered .js-qty-adjust:last-child {
+    border-right: none;
+}
+
+/* Minimal style - no background */
+.qty-box-minimal .js-qty-adjust {
+    background-color: transparent;
+    border: 1px solid rgba(var(--border-color), var(--border-opacity));
+}
+
+.qty-box-minimal .js-qty-adjust:hover {
+    background-color: var(--extra-bgcolor);
+}
+
+.qty-box-minimal .js-qty-num {
+    background-color: transparent !important;
+    border-left: 1px solid rgba(var(--border-color), var(--border-opacity)) !important;
+    border-right: 1px solid rgba(var(--border-color), var(--border-opacity)) !important;
+}

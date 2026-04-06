@@ -141,6 +141,23 @@ class OrderController extends Controller
         $user = User::where('email', $validated['email'])->first();
 
         if ($user) {
+            if ($user->isAdmin()) {
+                throw ValidationException::withMessages([
+                    'email' => 'This email belongs to an admin account. Please use another email for checkout.',
+                ]);
+            }
+
+            $user->update([
+                'name' => $validated['first_name'] . ' ' . $validated['last_name'],
+                'type' => User::TYPE_USER,
+                'phone' => $validated['phone'],
+                'address' => $validated['address'],
+                'city' => $validated['city'],
+                'state' => $validated['state'],
+                'country' => $validated['country'],
+                'pincode' => $validated['pincode'],
+            ]);
+
             return $user;
         }
 
@@ -148,7 +165,7 @@ class OrderController extends Controller
             'name' => $validated['first_name'] . ' ' . $validated['last_name'],
             'email' => $validated['email'],
             'password' => null,
-            'type' => 'user',
+            'type' => User::TYPE_USER,
             'password_set' => false,
             'phone' => $validated['phone'],
             'address' => $validated['address'],
@@ -447,6 +464,14 @@ class OrderController extends Controller
             Log::error('Order placement failed.', [
                 'message' => $exception->getMessage(),
             ]);
+
+            if ($exception instanceof ValidationException) {
+                return response()->json([
+                    'success' => false,
+                    'message' => $exception->validator->errors()->first(),
+                    'errors' => $exception->errors(),
+                ], 422);
+            }
 
             return response()->json([
                 'success' => false,

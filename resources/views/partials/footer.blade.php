@@ -172,6 +172,211 @@
             letter-spacing: 0.5px;
         }
 
+        .cart-drawer {
+            width: min(460px, 100%);
+            border-left: 1px solid rgba(176, 139, 102, 0.14);
+            box-shadow: -18px 0 55px rgba(78, 57, 32, 0.16) !important;
+        }
+
+        .cart-drawer .drawer-fixed-header,
+        .cart-drawer .drawer-footer {
+            background: #fff;
+        }
+
+        .cart-drawer .drawer-header h6 {
+            font-size: 26px;
+            font-family: 'Marcellus', serif;
+            margin: 0;
+        }
+
+        .cart-drawer .drawer-close-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #f7f0e7;
+            color: #8f6f4c;
+            transition: all .25s ease;
+        }
+
+        .cart-drawer .drawer-close-btn:hover {
+            background: #eadbc9;
+        }
+
+        .cart-drawer-item-list {
+            display: grid;
+            gap: 16px;
+            padding: 8px 0 18px;
+        }
+
+        .cart-drawer-card {
+            display: grid;
+            grid-template-columns: 108px minmax(0, 1fr);
+            gap: 16px;
+            padding: 14px;
+            background: #fff;
+            border: 1px solid #eee4d8;
+            border-radius: 22px;
+            box-shadow: 0 14px 30px rgba(143, 111, 76, 0.07);
+        }
+
+        .cart-drawer-thumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 1 / 1.15;
+            border-radius: 18px;
+            background: #fcfaf7;
+            overflow: hidden;
+        }
+
+        .cart-drawer-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .cart-drawer-title {
+            color: #2d2a26;
+            font-size: 22px;
+            font-family: 'Marcellus', serif;
+            line-height: 1.15;
+            text-decoration: none;
+        }
+
+        .cart-drawer-title:hover {
+            color: #b08b66;
+        }
+
+        .cart-drawer-variants {
+            margin-top: 6px;
+            color: #8b8073;
+            font-size: 13px;
+        }
+
+        .cart-drawer-price {
+            margin-top: 10px;
+            color: #b08b66;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .cart-drawer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        .cart-drawer .js-qty-wrap {
+            background: #fcfaf7 !important;
+            border: 1px solid #eadfce !important;
+            border-radius: 999px !important;
+            overflow: hidden;
+            min-height: 44px;
+        }
+
+        .cart-drawer .js-qty-wrap button {
+            width: 40px;
+            color: #8f6f4c;
+        }
+
+        .cart-drawer .qty-num {
+            width: 40px !important;
+            color: #2f2a26;
+            font-weight: 700;
+            background: transparent;
+        }
+
+        .cart-drawer-remove {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff4f3 !important;
+            color: #e25c55 !important;
+            border: 1px solid #f6d7d5 !important;
+        }
+
+        .cart-drawer-remove:hover {
+            background: #ffe6e4 !important;
+        }
+
+        .cart-drawer .drawer-footer {
+            border-top: 1px solid #eee4d8;
+        }
+
+        .cart-drawer-summary {
+            padding: 18px;
+            border: 1px solid #eee4d8;
+            border-radius: 22px;
+            background: linear-gradient(180deg, #fffdf9 0%, #f8f1e8 100%);
+        }
+
+        .cart-drawer-summary-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .cart-drawer-summary-row strong {
+            color: #2d2a26;
+            font-size: 17px;
+        }
+
+        .cart-drawer-total {
+            color: #b08b66;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .cart-drawer-note {
+            margin-top: 8px;
+            color: #8b8073;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .cart-drawer-checkout {
+            margin-top: 16px;
+        }
+
+        .cart-drawer-checkout .checkbox-agree {
+            padding: 12px 14px;
+            background: #fff;
+            border: 1px solid #eee4d8;
+            border-radius: 16px;
+        }
+
+        .cart-drawer-checkout .btn-style {
+            min-height: 54px;
+            border-radius: 16px;
+            font-weight: 700;
+        }
+
+        @media (max-width: 575px) {
+            .cart-drawer-card {
+                grid-template-columns: 88px minmax(0, 1fr);
+                gap: 12px;
+                padding: 12px;
+            }
+
+            .cart-drawer-title {
+                font-size: 18px;
+            }
+
+            .cart-drawer-price {
+                font-size: 20px;
+            }
+        }
+
         @media (max-width: 991px) {
             .footer-brand-logo {
                 max-height: 110px;
@@ -685,9 +890,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="pst-10 plr-15 text-center">
-                    <div class="extra-color font-14 ptb-6 plr-15 dominant-bg">First order? Get 11% Off with code <span class="heading-weight blinking">11%OFF</span>.</div>
-                </div>
                 <div class="drawer-cart-empty d-none h-100 ptb-30 plr-15">
                     <div class="drawer-scrollable h-100 d-flex flex-column align-items-center justify-content-center text-center">
                         <span class="secondary-color icon-32 meb-24"><i class="ri-shopping-bag-3-line d-block lh-1"></i></span>
@@ -705,12 +907,14 @@
 
                     </div>
                     <div class="drawer-footer ptb-15 plr-15 bst">
-                        <div class="drawer-total d-flex justify-content-between">
-                            <span>Subtotal</span>
-                            <span class="heading-color heading-weight subtotal-amount">0.00</span>
+                        <div class="cart-drawer-summary">
+                            <div class="cart-drawer-summary-row">
+                                <strong>Subtotal</strong>
+                                <span class="cart-drawer-total subtotal-amount">0.00</span>
+                            </div>
+                            <div class="cart-drawer-note">Shipping, taxes, and discount codes are calculated at checkout.</div>
                         </div>
-                        <div class="font-12 mst-8">Shipping, taxes, and discount codes calculated at checkout</div>
-                        <div class="drawer-cart-checkout mst-12">
+                        <div class="drawer-cart-checkout cart-drawer-checkout mst-12">
                             <div class="drawer-cart-box meb-11">
                                 <label class="cust-checkbox-label checkbox-agree">
                                     <input type="checkbox" id="drawer-terms" name="drawer-terms" class="cust-checkbox checkboxbtn">

@@ -65,9 +65,9 @@
                                                 <div class="quick-info mst-10">
                                                     <div class="product-price">
                                                         <div class="price-box font-18">
-                                                            <span class="new-price dominant-color heading-weight">₹{{ number_format($product->price, 2) }}</span>
-                                                            @if($product->discount_price)
-                                                                <span class="heading-weight">~ <span class="old-price text-decoration-line-through">₹{{ number_format($product->discount_price, 2) }}</span></span>
+                                                            <span class="new-price dominant-color heading-weight">₹{{ number_format($product->effectivePrice(), 2) }}</span>
+                                                            @if($product->hasDiscount())
+                                                                <span class="heading-weight">~ <span class="old-price text-decoration-line-through">₹{{ number_format($product->price, 2) }}</span></span>
                                                             @endif
                                                         </div>
                                                     </div>

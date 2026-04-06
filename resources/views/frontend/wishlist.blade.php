@@ -101,7 +101,12 @@
                                                 </div>
                                                 <div class="wish-item-info width-calc-88 psl-15">
                                                     <a href="{{ route('products.show', $item->product->id) }}" class="dominant-link heading-weight">{{ $item->product->name }}</a>
-                                                    <div class="wish-item-price heading-color mst-8 heading-weight">₹{{ number_format($item->product->price, 2) }}</div>
+                                                    <div class="wish-item-price heading-color mst-8 heading-weight">
+                                                        ₹{{ number_format($item->product->effectivePrice(), 2) }}
+                                                        @if($item->product->hasDiscount())
+                                                            <span class="ms-2 text-muted text-decoration-line-through">₹{{ number_format($item->product->price, 2) }}</span>
+                                                        @endif
+                                                    </div>
                                                     @if($item->product->quantity > 0)
                                                         <span class="text-success font-12"><i class="ri-check-line"></i> In Stock</span>
                                                     @else
@@ -112,7 +117,12 @@
                                         </div>
                                         <div class="col-12 col-md-3">
                                             <div class="d-md-none heading-color heading-weight meb-11">Price</div>
-                                            <div class="wishlist-item-price heading-color heading-weight">₹{{ number_format($item->product->price, 2) }}</div>
+                                            <div class="wishlist-item-price heading-color heading-weight">
+                                                ₹{{ number_format($item->product->effectivePrice(), 2) }}
+                                                @if($item->product->hasDiscount())
+                                                    <span class="ms-2 text-muted text-decoration-line-through">₹{{ number_format($item->product->price, 2) }}</span>
+                                                @endif
+                                            </div>
                                         </div>
                                         <div class="col-12 col-md-2 col-lg-3">
                                             <div class="d-md-none heading-color heading-weight meb-11">Action</div>

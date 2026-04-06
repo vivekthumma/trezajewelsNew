@@ -34,6 +34,18 @@
     <!-- style css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/style2.css') }}">
 
+    <style>
+        #main {
+            padding-top: 36px;
+        }
+
+        @media (max-width: 1199px) {
+            #main {
+                padding-top: 28px;
+            }
+        }
+    </style>
+
     @stack('css')
 </head>
 

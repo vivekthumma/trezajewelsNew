@@ -1,18 +1,6 @@
 <!-- header start -->
 <header id="header" class="main-header">
     <div class="header-top-area">
-        <!-- notification-bar start -->
-        <div class="notification-bar ptb-13 dominant-bg">
-            <div class="notification-marquee d-flex overflow-hidden">
-                <div class="notification-marquee-row d-flex">
-                    <div class="extra-color text-uppercase heading-weight text-nowrap">Enjoy an extra 25% off with code <span class="blinking">TREZA25</span>!</div>
-                    <div class="extra-color text-uppercase heading-weight text-nowrap">Grab free shipping on orders over <span class="blinking">500</span>!</div>
-                    <div class="extra-color text-uppercase heading-weight text-nowrap">Need-help: <a href="tel:+911234567890" class="extra-color">+91 123 456 7890</a></div>
-                    <div class="extra-color text-uppercase heading-weight text-nowrap">Flat <span class="blinking">30% off</span> sitewide-shop now!</div>
-                </div>
-            </div>
-        </div>
-        
         <!-- header-top-first start -->
         <div class="header-top-first ptb-15 ptb-xl-20 position-relative extra-bg">
             <div class="container-fluid">

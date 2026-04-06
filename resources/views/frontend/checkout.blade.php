@@ -2,265 +2,523 @@
 
 @section('title', 'Checkout - Treza Jewels')
 
-@section('style')
+@push('css')
 <style>
-    .payment-options-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
+    .checkout-shell {
+        max-width: 1320px;
+        margin: 0 auto;
     }
+
+    .checkout-main-card,
+    .checkout-summary-card,
+    .checkout-block,
+    .checkout-mini-card {
+        background: #fff;
+        border: 1px solid rgba(176, 139, 102, 0.14);
+        border-radius: 28px;
+        box-shadow: 0 24px 60px rgba(143, 111, 76, 0.08);
+    }
+
+    .checkout-main-card,
+    .checkout-summary-card {
+        padding: 28px;
+    }
+
+    .checkout-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 22px;
+    }
+
+    .checkout-heading h2 {
+        margin: 0;
+        font-size: 30px;
+        font-family: "Marcellus", serif;
+        color: #2d2a26;
+    }
+
+    .checkout-heading p {
+        margin: 6px 0 0;
+        color: #8b8073;
+        font-size: 14px;
+    }
+
+    .checkout-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 9px 14px;
+        border-radius: 999px;
+        background: #f7f0e7;
+        color: #b08b66;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+    }
+
+    .checkout-block {
+        padding: 22px;
+        margin-top: 22px;
+    }
+
+    .checkout-block:first-child {
+        margin-top: 0;
+    }
+
+    .checkout-block-title {
+        margin: 0 0 18px;
+        font-size: 24px;
+        font-family: "Marcellus", serif;
+        color: #2d2a26;
+    }
+
+    .checkout-checkbox-card {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 16px;
+        border-radius: 18px;
+        background: #fcfaf7;
+        border: 1px solid #eee4d8;
+    }
+
+    .checkout-form-label {
+        display: block;
+        margin-bottom: 8px;
+        color: #6e665d;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .checkout-input,
+    .checkout-select {
+        width: 100%;
+        min-height: 58px;
+        border: 1px solid #e7ded2 !important;
+        background: #fffdfb !important;
+        border-radius: 16px !important;
+        padding: 14px 16px !important;
+        color: #2f2a26;
+        transition: border-color .25s ease, box-shadow .25s ease, background-color .25s ease;
+        box-shadow: none !important;
+    }
+
+    .checkout-input:focus,
+    .checkout-select:focus {
+        border-color: #cda97f !important;
+        box-shadow: 0 0 0 4px rgba(205, 169, 127, 0.12) !important;
+        background: #fff !important;
+        outline: none;
+    }
+
+    .payment-options-wrapper {
+        display: grid;
+        gap: 16px;
+    }
+
     .payment-option-item {
         position: relative;
         cursor: pointer;
-        transition: all 0.3s ease;
         display: block;
     }
+
     .payment-option-item input {
         position: absolute;
         opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
+        pointer-events: none;
     }
+
     .payment-option-content {
-        padding: 20px 25px;
-        background: #fff;
-        border: 2px solid #f2f2f2;
-        border-radius: 12px;
         display: flex;
         align-items: center;
-        gap: 20px;
-        transition: all 0.3s ease;
+        gap: 18px;
+        padding: 18px 20px;
+        background: #fcfaf7;
+        border: 1px solid #eadfce;
+        border-radius: 18px;
+        transition: all .25s ease;
     }
+
     .payment-option-item:hover .payment-option-content {
-        border-color: #ddd;
+        border-color: #d8c2ab;
+        transform: translateY(-1px);
     }
+
     .payment-option-item input:checked + .payment-option-content {
-        border-color: #f7a392; /* Theme primary color */
-        background-color: #fff9f8;
+        background: linear-gradient(180deg, #fffaf4 0%, #f8efe4 100%);
+        border-color: #cda97f;
+        box-shadow: 0 10px 24px rgba(176, 139, 102, 0.12);
     }
+
     .radio-indicator {
-        width: 20px;
-        height: 20px;
-        border: 2px solid #ddd;
+        width: 22px;
+        height: 22px;
+        border: 2px solid #cfb79c;
         border-radius: 50%;
-        display: flex;
+        display: inline-flex;
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
-        transition: all 0.3s ease;
     }
-    .payment-option-item input:checked + .payment-option-content .radio-indicator {
-        border-color: #f7a392;
-    }
+
     .radio-indicator::after {
         content: "";
         width: 10px;
         height: 10px;
-        background: #f7a392;
         border-radius: 50%;
+        background: #b08b66;
         transform: scale(0);
-        transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: transform .2s ease;
     }
+
+    .payment-option-item input:checked + .payment-option-content .radio-indicator {
+        border-color: #b08b66;
+    }
+
     .payment-option-item input:checked + .payment-option-content .radio-indicator::after {
         transform: scale(1);
     }
+
     .payment-text h6 {
         margin: 0 0 4px;
-        font-weight: 600;
-        color: #333;
+        font-size: 17px;
+        font-weight: 700;
+        color: #2d2a26;
     }
+
     .payment-text p {
         margin: 0;
+        color: #8b8073;
         font-size: 13px;
-        color: #777;
     }
-    .payment-option-item.disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
+
+    .checkout-submit {
+        min-height: 58px;
+        border-radius: 16px !important;
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: .02em;
     }
-    .payment-option-item.disabled .payment-option-content {
-        background: #fdfdfd;
+
+    .checkout-summary-card {
+        position: sticky;
+        top: 24px;
+    }
+
+    .checkout-order-list {
+        display: grid;
+        gap: 16px;
+    }
+
+    .checkout-order-item {
+        display: grid;
+        grid-template-columns: 88px minmax(0, 1fr);
+        gap: 14px;
+        padding: 14px;
+        border-radius: 20px;
+        background: #fcfaf7;
+        border: 1px solid #eee4d8;
+    }
+
+    .checkout-order-thumb {
+        position: relative;
+        border-radius: 18px;
+        overflow: hidden;
+        background: #fff;
+        aspect-ratio: 1 / 1.12;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .checkout-order-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .checkout-order-qty {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        min-width: 24px;
+        height: 24px;
+        padding: 0 6px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #2d2a26;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    .checkout-order-name {
+        color: #2d2a26;
+        font-size: 22px;
+        font-family: "Marcellus", serif;
+        line-height: 1.12;
+        text-decoration: none;
+    }
+
+    .checkout-order-name:hover {
+        color: #b08b66;
+    }
+
+    .checkout-order-meta {
+        margin-top: 8px;
+        color: #8b8073;
+        font-size: 13px;
+    }
+
+    .checkout-order-price {
+        margin-top: 14px;
+        color: #b08b66;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .checkout-summary-totals {
+        margin-top: 22px;
+        padding-top: 22px;
+        border-top: 1px solid #eee4d8;
+        display: grid;
+        gap: 14px;
+    }
+
+    .checkout-total-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        color: #6e665d;
+    }
+
+    .checkout-total-row span:last-child {
+        color: #2d2a26;
+        font-weight: 600;
+    }
+
+    .checkout-total-row.discount span:last-child {
+        color: #f04452;
+    }
+
+    .checkout-total-row.shipping span:last-child {
+        color: #15915a;
+    }
+
+    .checkout-grand-total {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid #e9dece;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .checkout-grand-total strong:first-child {
+        font-size: 20px;
+        color: #2d2a26;
+    }
+
+    .checkout-grand-total strong:last-child {
+        font-size: 30px;
+        color: #b08b66;
+    }
+
+    @media (max-width: 991px) {
+        .checkout-summary-card {
+            position: static;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .checkout-main-card,
+        .checkout-summary-card,
+        .checkout-block {
+            padding: 18px;
+            border-radius: 20px;
+        }
+
+        .checkout-heading {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .checkout-heading h2,
+        .checkout-block-title,
+        .checkout-order-name {
+            font-size: 24px;
+        }
+
+        .checkout-order-item {
+            grid-template-columns: 72px minmax(0, 1fr);
+            padding: 12px;
+        }
+
+        .checkout-order-price,
+        .checkout-grand-total strong:last-child {
+            font-size: 22px;
+        }
     }
 </style>
-@endsection
+@endpush
 
 @section('content')
-<!-- breadcrumb-area start -->
 <div class="breadcrumb-area ptb-15" data-bgimg="{{ asset('assets/images/other/breadcrumb-bgimg.jpg') }}">
     <div class="container">
         <span class="d-block extra-color"><a href="{{ url('/') }}" class="extra-color">Home</a> / Checkout</span>
     </div>
 </div>
-<!-- breadcrumb-area end -->
 
-<!-- checkout start -->
 <section class="checkout-area section-ptb">
     <form method="POST" id="checkout-form">
         @csrf
-        <div class="container">
-            <div class="row row-mtm flex-lg-row-reverse align-items-lg-start">
-                <div class="col-12 col-lg-5 p-lg-sticky top-0" data-animate="animate__fadeIn">
-                    <div class="checkout-summary">
-                        <div class="checkout-orderview">
-                            <h6 class="font-18 meb-25">Shopping cart <span class="checkcart-count cart-counter">{{ $cartItems->sum('quantity') }}</span></h6>
-                            <div class="row row-mtm15 checkout-item-list">
-                                @foreach($cartItems as $item)
-                                <div class="checkitem-content mb-3">
-                                    <div class="ul-mt15 d-flex">
-                                        <div class="checkitem-img width-88 me-3">
-                                            <div class="position-relative">
-                                                <img src="{{ $item->product->main_image ? imgPath($item->product->main_image) : asset('assets/images/cart/cart-1.jpg') }}" class="w-100 img-fluid border-radius" alt="{{ $item->product->name }}">
-                                                <span class="checkitem-qty extra-color font-11 position-absolute d-flex align-items-center justify-content-center secondary-bg rounded-circle lh-1" style="width: 20px; height: 20px; top: -5px; right: -5px;">{{ $item->quantity }}</span>
-                                            </div>
-                                        </div>
-                                        <div class="checkitem-info width-calc-88 flex-grow-1">
-                                            <div class="checkitem-detail h-100 d-flex flex-column justify-content-between">
-                                                <div class="checkitem-text">
-                                                    <a href="{{ route('products.show', $item->product_id) }}" class="dominant-link heading-weight">{{ $item->product->name }}</a>
-                                                    @if($item->size || $item->color)
-                                                        <div class="mst-8">{{ $item->size }}{{ $item->size && $item->color ? ' / ' : '' }}{{ $item->color }}</div>
-                                                    @endif
-                                                </div>
-                                                <div class="checkitem-price mst-10 text-end">
-                                                    <div class="heading-color heading-weight">{{ number_format($item->price * $item->quantity, 2) }}</div>
-                                                </div>
-                                            </div>
-                                        </div>
+        <div class="container checkout-shell">
+            <div class="row g-4 flex-lg-row-reverse align-items-start">
+                <div class="col-12 col-lg-5">
+                    <div class="checkout-summary-card">
+                        <div class="checkout-heading">
+                            <div>
+                                <h2>Order Summary</h2>
+                                <p>Review your selected items before placing the order.</p>
+                            </div>
+                            <span class="checkout-badge">{{ $cartItems->sum('quantity') }} Item{{ $cartItems->sum('quantity') > 1 ? 's' : '' }}</span>
+                        </div>
+
+                        <div class="checkout-order-list">
+                            @foreach($cartItems as $item)
+                                <div class="checkout-order-item">
+                                    <div class="checkout-order-thumb">
+                                        <img src="{{ $item->product->main_image ? imgPath($item->product->main_image) : asset('assets/images/cart/cart-1.jpg') }}" alt="{{ $item->product->name }}">
+                                        <span class="checkout-order-qty">{{ $item->quantity }}</span>
+                                    </div>
+                                    <div>
+                                        <a href="{{ route('products.show', $item->product_id) }}" class="checkout-order-name">{{ $item->product->name }}</a>
+                                        @if($item->size || $item->color)
+                                            <div class="checkout-order-meta">{{ $item->size }}{{ $item->size && $item->color ? ' / ' : '' }}{{ $item->color }}</div>
+                                        @endif
+                                        <div class="checkout-order-price">{{ number_format($item->price * $item->quantity, 2) }}</div>
                                     </div>
                                 </div>
-                                @endforeach
+                            @endforeach
+                        </div>
+
+                        <div class="checkout-summary-totals">
+                            <div class="checkout-total-row">
+                                <span>Subtotal</span>
+                                <span class="subtotal-amount">{{ number_format($subtotal, 2) }}</span>
+                            </div>
+                            <div class="checkout-total-row discount">
+                                <span>Discount</span>
+                                <span>0.00</span>
+                            </div>
+                            <div class="checkout-total-row shipping">
+                                <span>Shipping</span>
+                                <span>0.00</span>
+                            </div>
+                            <div class="checkout-total-row">
+                                <span>Tax</span>
+                                <span>0.00</span>
                             </div>
                         </div>
-                        <div class="checkout-costview">
-                            <div class="checkout-cost mst-30 pst-30 bst">
-                                <h6 class="font-18 meb-22">Cost summary</h6>
-                                <div class="row row-mtm20">
-                                    <div class="col-12 d-flex justify-content-between">
-                                        <span>Subtotal</span>
-                                        <span class="heading-color heading-weight subtotal-amount">{{ number_format($subtotal, 2) }}</span>
-                                    </div>
-                                    <div class="col-12 d-flex justify-content-between">
-                                        <span>Discount</span>
-                                        <span class="text-danger heading-weight">0.00</span>
-                                    </div>
-                                    <div class="col-12 d-flex justify-content-between">
-                                        <span>Shipping</span>
-                                        <span class="text-success heading-weight">0.00</span>
-                                    </div>
-                                    <div class="col-12 d-flex justify-content-between">
-                                        <span>Tax</span>
-                                        <span class="heading-color heading-weight">0.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="checkout-cost mst-30 pst-30 bst">
-                                <div class="row row-mtm22">
-                                    <div class="col-12 d-flex justify-content-between">
-                                        <span class="font-18 heading-weight">Total</span>
-                                        <span class="font-18 heading-color heading-weight subtotal-amount">{{ number_format($subtotal, 2) }}</span>
-                                    </div>
-                                </div>
-                            </div>
+
+                        <div class="checkout-grand-total">
+                            <strong>Total</strong>
+                            <strong class="subtotal-amount">{{ number_format($subtotal, 2) }}</strong>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-12 col-lg-7">
-                    <div class="checktab-overview">
-                        <div class="checktab-content">
-                            <div class="checkout-box peb-30 meb-30 beb">
-                                <label class="cust-checkbox-label">
-                                    <input type="checkbox" id="news-email" name="news-email" class="cust-checkbox">
-                                    <span class="d-block cust-check"></span>
-                                    <span>Email me with news and offers</span>
-                                </label>
+                    <div class="checkout-main-card">
+                        <div class="checkout-heading">
+                            <div>
+                                <h2>Checkout</h2>
+                                <p>Fill in your shipping details and choose a payment method.</p>
                             </div>
-                            <div class="checktab-detail">
-                                <div class="checktab-data">
-                                    <div class="checktab-info">
-                                        <div class="acc-info">
-                                            <div class="acc-title d-flex align-items-center justify-content-between">
-                                                <h6 class="font-18">Shipping address</h6>
-                                            </div>
-                                            <div class="acc-detail-form mst-22">
-                                                <div class="row field-row">
-                                                    <div class="col-12 col-md-6 field-col mb-3">
-                                                        <label for="first_name" class="field-label">First Name</label>
-                                                        <input type="text" id="first_name" name="first_name" class="w-100 form-control" placeholder="First Name" required>
-                                                    </div>
-                                                    <div class="col-12 col-md-6 field-col mb-3">
-                                                        <label for="last_name" class="field-label">Last Name</label>
-                                                        <input type="text" id="last_name" name="last_name" class="w-100 form-control" placeholder="Last Name" required>
-                                                    </div>
-                                                    <div class="col-12 col-md-12 field-col mb-3">
-                                                        <label for="email" class="field-label">Email</label>
-                                                        <input type="email" id="email" name="email" class="w-100 form-control" placeholder="Email address" required>
-                                                    </div>
-                                                    <div class="col-12 col-md-6 field-col mb-3">
-                                                        <label for="phone" class="field-label">Phone</label>
-                                                        <input type="text" id="phone" name="phone" class="w-100 form-control" placeholder="Phone number" required>
-                                                    </div>
-                                                    <div class="col-12 col-md-6 field-col mb-3">
-                                                        <label for="country" class="field-label">Country</label>
-                                                        <select id="country" name="country" class="w-100 form-control" required>
-                                                            <option value="India">India</option>
-                                                            <option value="USA">USA</option>
-                                                            <option value="UK">UK</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-12 col-md-6 field-col mb-3">
-                                                        <label for="state" class="field-label">State</label>
-                                                        <input type="text" id="state" name="state" class="w-100 form-control" placeholder="State" required>
-                                                    </div>
-                                                    <div class="col-12 col-md-6 field-col mb-3">
-                                                        <label for="city" class="field-label">City</label>
-                                                        <input type="text" id="city" name="city" class="w-100 form-control" placeholder="City" required>
-                                                    </div>
-                                                    <div class="col-12 col-md-6 field-col mb-3">
-                                                        <label for="address" class="field-label">Address</label>
-                                                        <input type="text" id="address" name="address" class="w-100 form-control" placeholder="Address line1" required>
-                                                    </div>
-                                                    <div class="col-12 col-md-6 field-col mb-3">
-                                                        <label for="pincode" class="field-label">Pincode</label>
-                                                        <input type="text" id="pincode" name="pincode" class="w-100 form-control" placeholder="Pincode" required>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                        </div>
 
-                                        <div class="checkout-payment mst-50">
-                                            <h6 class="font-18 meb-25">Payment method</h6>
-                                            <div class="payment-options-wrapper">
-                                                <label class="payment-option-item">
-                                                    <input type="radio" name="payment_method" value="cod" checked>
-                                                    <div class="payment-option-content">
-                                                        <div class="radio-indicator"></div>
-                                                        <div class="payment-text">
-                                                            <h6>Cash on Delivery (COD)</h6>
-                                                            <p>Pay with cash upon delivery.</p>
-                                                        </div>
-                                                    </div>
-                                                </label>
-
-                                                <label class="payment-option-item">
-                                                    <input type="radio" name="payment_method" value="razorpay">
-                                                    <div class="payment-option-content">
-                                                        <div class="radio-indicator"></div>
-                                                        <div class="payment-text">
-                                                            <h6>Razorpay (Cards / UPI / Netbanking)</h6>
-                                                            <p>Pay securely online with Razorpay.</p>
-                                                        </div>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div class="checkout-footer mst-40 border-top pt-4">
-                                            <button type="submit" class="btn-style secondary-btn w-100 py-3" data-default-text="Place Order">Place Order</button>
-                                        </div>
-                                    </div>
+                        <div class="checkout-block">
+                            <h3 class="checkout-block-title">Shipping Address</h3>
+                            <div class="row g-3">
+                                <div class="col-12 col-md-6">
+                                    <label for="first_name" class="checkout-form-label">First Name</label>
+                                    <input type="text" id="first_name" name="first_name" class="checkout-input" placeholder="First Name" required>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="last_name" class="checkout-form-label">Last Name</label>
+                                    <input type="text" id="last_name" name="last_name" class="checkout-input" placeholder="Last Name" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="email" class="checkout-form-label">Email</label>
+                                    <input type="email" id="email" name="email" class="checkout-input" placeholder="Email address" required>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="phone" class="checkout-form-label">Phone</label>
+                                    <input type="text" id="phone" name="phone" class="checkout-input" placeholder="Phone number" required>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="country" class="checkout-form-label">Country</label>
+                                    <select id="country" name="country" class="checkout-select" required>
+                                        <option value="India">India</option>
+                                        <option value="USA">USA</option>
+                                        <option value="UK">UK</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="state" class="checkout-form-label">State</label>
+                                    <input type="text" id="state" name="state" class="checkout-input" placeholder="State" required>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="city" class="checkout-form-label">City</label>
+                                    <input type="text" id="city" name="city" class="checkout-input" placeholder="City" required>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="address" class="checkout-form-label">Address</label>
+                                    <input type="text" id="address" name="address" class="checkout-input" placeholder="Address line 1" required>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="pincode" class="checkout-form-label">Pincode</label>
+                                    <input type="text" id="pincode" name="pincode" class="checkout-input" placeholder="Pincode" required>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="checkout-block">
+                            <h3 class="checkout-block-title">Payment Method</h3>
+                            <div class="payment-options-wrapper">
+                                <label class="payment-option-item">
+                                    <input type="radio" name="payment_method" value="cod" checked>
+                                    <div class="payment-option-content">
+                                        <div class="radio-indicator"></div>
+                                        <div class="payment-text">
+                                            <h6>Cash On Delivery</h6>
+                                            <p>Pay with cash once your order arrives at your address.</p>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="payment-option-item">
+                                    <input type="radio" name="payment_method" value="razorpay">
+                                    <div class="payment-option-content">
+                                        <div class="radio-indicator"></div>
+                                        <div class="payment-text">
+                                            <h6>Razorpay</h6>
+                                            <p>Pay securely using cards, UPI, wallets or netbanking.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="checkout-block">
+                            <button type="submit" class="btn-style secondary-btn w-100 checkout-submit" data-default-text="Place Order">Place Order</button>
                         </div>
                     </div>
                 </div>
@@ -268,7 +526,7 @@
         </div>
     </form>
 </section>
-<!-- checkout end -->
+
 @push('js')
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
@@ -413,4 +671,3 @@
 </script>
 @endpush
 @endsection
-

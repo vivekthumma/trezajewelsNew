@@ -9,30 +9,6 @@
         <header id="header" class="main-header">
             <!-- header-top start -->
             <div class="header-top-area">
-                <!-- notification-bar start -->
-                <div class="notification-bar ptb-13 dominant-bg">
-                    <div class="notification-marquee d-flex overflow-hidden">
-                        <div class="notification-marquee-row d-flex">
-                            <div class="extra-color text-uppercase heading-weight text-nowrap">Enjoy an extra 25% off with code <span class="blinking">25VEPPO</span>!</div>
-                            <div class="extra-color text-uppercase heading-weight text-nowrap">Grab free shipping on orders over <span class="blinking">50</span>!</div>
-                            <div class="extra-color text-uppercase heading-weight text-nowrap">Need-help: <a href="tel:+3612345678" class="extra-color">+36 1 234 5678</a></div>
-                            <div class="extra-color text-uppercase heading-weight text-nowrap">Flat <span class="blinking">30% off</span> sitewide-shop now!</div>
-                            <div class="extra-color text-uppercase heading-weight text-nowrap">Buy 1, Get 1 Free on select items!</div>
-                            <div class="extra-color text-uppercase heading-weight text-nowrap">Exclusive deal: <span class="blinking">15% off</span> for members!</div>
-                            <div class="extra-color text-uppercase heading-weight text-nowrap">Save <span class="blinking">10</span> on orders above 100!</div>
-                        </div>
-                        <div class="notification-marquee-row d-flex">
-                            <div class="extra-color text-uppercase heading-weight text-nowrap">Enjoy an extra 25% off with code <span class="blinking">25VEPPO</span>!</div>
-                            <div class="extra-color text-uppercase heading-weight text-nowrap">Grab free shipping on orders over <span class="blinking">50</span>!</div>
-                            <div class="extra-color text-uppercase heading-weight text-nowrap">Need-help: <a href="tel:+3612345678" class="extra-color">+36 1 234 5678</a></div>
-                            <div class="extra-color text-uppercase heading-weight text-nowrap">Flat <span class="blinking">30% off</span> sitewide-shop now!</div>
-                            <div class="extra-color text-uppercase heading-weight text-nowrap">Buy 1, Get 1 Free on select items!</div>
-                            <div class="extra-color text-uppercase heading-weight text-nowrap">Exclusive deal: <span class="blinking">15% off</span> for members!</div>
-                            <div class="extra-color text-uppercase heading-weight text-nowrap">Save <span class="blinking">10</span> on orders above 100!</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- notification-bar end -->
                 <!-- header-top-first start -->
                 <div class="header-top-first ptb-15 ptb-xl-20 position-relative extra-bg">
                     <div class="container-fluid">
@@ -111,7 +87,7 @@
                                                     </li>
                                                     <li><hr class="dropdown-divider opacity-10"></li>
                                                     <li><a class="dropdown-item py-2 rounded-2" href="{{ route('profile') }}"><i class="ri-user-line me-2"></i>My Profile</a></li>
-                                                    @if(Auth::user()->type === 'admin')
+                                                    @if(Auth::user()->isAdmin())
                                                         <li><a class="dropdown-item py-2 rounded-2" href="{{ route('home') }}"><i class="ri-settings-4-line me-2"></i>Admin Panel</a></li>
                                                     @endif
                                                     <li><hr class="dropdown-divider opacity-10"></li>

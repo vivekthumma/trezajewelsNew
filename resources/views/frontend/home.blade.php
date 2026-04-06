@@ -8,6 +8,100 @@
 @endpush
 
 @push('css')
+<style>
+    .category-product .trend-grid {
+        display: grid !important;
+        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+        gap: 28px !important;
+        align-items: start;
+    }
+
+    .category-product .trend-grid-item {
+        display: block !important;
+        min-width: 0;
+    }
+
+    .category-product .trend-grid .single-product,
+    .category-product .trend-grid .single-product-wrap {
+        height: 100%;
+    }
+
+    .category-product .trend-grid .product-image-cat-variant {
+        background: #fff;
+        border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid rgba(201, 169, 97, 0.16);
+        box-shadow: 0 18px 40px rgba(59, 43, 31, 0.08);
+    }
+
+    .category-product .trend-grid .product-image a.pro-img {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        height: 320px !important;
+        aspect-ratio: 1 / 1.08 !important;
+        padding: 18px !important;
+        background: #fff !important;
+    }
+
+    .category-product .trend-grid .product-image a.pro-img img {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        object-fit: contain !important;
+        object-position: center !important;
+    }
+
+    .category-product .trend-grid .product-content {
+        padding: 18px 14px 0 !important;
+        text-align: center;
+    }
+
+    .category-product .trend-grid .product-title a {
+        font-size: 16px !important;
+        min-height: 48px;
+        white-space: normal !important;
+    }
+
+    .category-product .trend-grid .price-box {
+        justify-content: center !important;
+    }
+
+    @media (max-width: 1199.98px) {
+        .category-product .trend-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        }
+
+        .category-product .trend-grid .product-image a.pro-img {
+            height: 290px !important;
+        }
+    }
+
+    @media (max-width: 991.98px) {
+        .category-product .trend-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            gap: 22px !important;
+        }
+
+        .category-product .trend-grid .product-image a.pro-img {
+            height: 260px !important;
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        .category-product .trend-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 18px !important;
+        }
+
+        .category-product .trend-grid .product-image a.pro-img {
+            height: 210px !important;
+            padding: 12px !important;
+        }
+    }
+</style>
 @endpush
 
 @section('content')
@@ -236,108 +330,74 @@
                         </div>
                     </div>
                     <div class="collection-wrap">
-                        <div class="collection-slider swiper" id="trend-product-slider">
-                            <div class="swiper-wrapper">
-                                @foreach($products as $product)
-                                    <div class="swiper-slide h-auto d-flex" data-animate="animate__fadeIn">
-                                        <div class="single-product w-100">
-                                            <div class="row single-product-wrap">
-                                                <div class="product-image-col">
-                                                    <div class="product-image-cat-variant">
-                                                        <div class="product-image">
-                                                            <a href="{{ route('products.show', $product->id) }}"
-                                                                class="pro-img">
-                                                                <img src="{{ imgPath($product->main_image) }}"
-                                                                    class="w-100 img-fluid img1" alt="{{ $product->name }}">
-                                                                @if($product->gallery && $product->gallery->count() > 0)
-                                                                    <img src="{{ imgPath($product->gallery->first()->image) }}"
-                                                                        class="w-100 img-fluid img2" alt="{{ $product->name }}">
-                                                                @else
-                                                                    <img src="{{ imgPath($product->main_image) }}"
-                                                                        class="w-100 img-fluid img2" alt="{{ $product->name }}">
-                                                                @endif
-                                                                @if($product->discount_price > 0)
-                                                                    <span
-                                                                        class="product-label product-label-new product-label-left">Sale</span>
-                                                                @endif
+                        <div class="trend-grid">
+                            @foreach($products as $product)
+                                <div class="trend-grid-item" data-animate="animate__fadeIn">
+                                    <div class="single-product w-100">
+                                        <div class="row single-product-wrap">
+                                            <div class="product-image-col">
+                                                <div class="product-image-cat-variant">
+                                                    <div class="product-image">
+                                                        <a href="{{ route('products.show', $product->id) }}" class="pro-img">
+                                                            <img src="{{ imgPath($product->main_image) }}" class="w-100 img-fluid img1" alt="{{ $product->name }}">
+                                                            @if($product->gallery && $product->gallery->count() > 0)
+                                                                <img src="{{ imgPath($product->gallery->first()->image) }}" class="w-100 img-fluid img2" alt="{{ $product->name }}">
+                                                            @else
+                                                                <img src="{{ imgPath($product->main_image) }}" class="w-100 img-fluid img2" alt="{{ $product->name }}">
+                                                            @endif
+                                                            @if($product->discount_price > 0)
+                                                                <span class="product-label product-label-new product-label-left">Sale</span>
+                                                            @endif
+                                                        </a>
+                                                        <div class="product-action">
+                                                            <a href="javascript:void(0)" class="add-to-wishlist" data-product-id="{{ $product->id }}">
+                                                                <span class="product-icon"><i class="ri-heart-line d-block icon-16 lh-1"></i></span>
+                                                                <span class="tooltip-text">wishlist</span>
                                                             </a>
-                                                            <div class="product-action">
-                                                                <a href="javascript:void(0)" class="add-to-wishlist"
-                                                                    data-product-id="{{ $product->id }}">
-                                                                    <span class="product-icon"><i
-                                                                            class="ri-heart-line d-block icon-16 lh-1"></i></span>
-                                                                    <span class="tooltip-text">wishlist</span>
-                                                                </a>
-                                                                <a href="javascript:void(0)"
-                                                                    class="quick-view dynamic-quickview"
-                                                                    data-product-id="{{ $product->id }}">
-                                                                    <span class="product-icon"><i
-                                                                            class="ri-eye-line d-block icon-16 lh-1"></i></span>
-                                                                    <span class="tooltip-text">quickview</span>
-                                                                </a>
-                                                                <a href="javascript:void(0)"
-                                                                    class="add-to-cart ajax-add-to-cart"
-                                                                    data-product-id="{{ $product->id }}">
-                                                                    <span class="product-icon">
-                                                                        <span class="product-bag-icon icon-16"><i
-                                                                                class="ri-shopping-cart-line d-block lh-1"></i></span>
-                                                                        <span class="product-loader-icon icon-16"><i
-                                                                                class="ri-loader-4-line d-block lh-1"></i></span>
-                                                                        <span class="product-check-icon icon-16"><i
-                                                                                class="ri-check-line d-block lh-1"></i></span>
-                                                                    </span>
-                                                                    <span class="tooltip-text">add to cart</span>
-                                                                </a>
-                                                            </div>
+                                                            <a href="javascript:void(0)" class="quick-view dynamic-quickview" data-product-id="{{ $product->id }}">
+                                                                <span class="product-icon"><i class="ri-eye-line d-block icon-16 lh-1"></i></span>
+                                                                <span class="tooltip-text">quickview</span>
+                                                            </a>
+                                                            <a href="javascript:void(0)" class="add-to-cart ajax-add-to-cart" data-product-id="{{ $product->id }}">
+                                                                <span class="product-icon">
+                                                                    <span class="product-bag-icon icon-16"><i class="ri-shopping-cart-line d-block lh-1"></i></span>
+                                                                    <span class="product-loader-icon icon-16"><i class="ri-loader-4-line d-block lh-1"></i></span>
+                                                                    <span class="product-check-icon icon-16"><i class="ri-check-line d-block lh-1"></i></span>
+                                                                </span>
+                                                                <span class="tooltip-text">add to cart</span>
+                                                            </a>
                                                         </div>
-                                                        <div class="product-cat-variant">
-                                                            <div class="pro-cat-variant">
-                                                                <div class="product-cat">
-                                                                    <span
-                                                                        class="d-block">{{ $product->category->name ?? 'Jewelry' }}</span>
-                                                                </div>
+                                                    </div>
+                                                    <div class="product-cat-variant">
+                                                        <div class="pro-cat-variant">
+                                                            <div class="product-cat">
+                                                                <span class="d-block">{{ $product->category->name ?? 'Jewelry' }}</span>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="product-content">
-                                                    <div class="pro-content">
-                                                        <div class="product-title">
-                                                            <span class="d-block heading-weight"><a
-                                                                    href="{{ route('products.show', $product->id) }}"
-                                                                    class="d-block w-100 dominant-link text-truncate">{{ $product->name }}</a></span>
-                                                        </div>
-                                                        <div class="product-price">
-                                                            <div class="price-box heading-weight">
-                                                                @if($product->discount_price > 0)
-                                                                    <span
-                                                                        class="new-price dominant-color">{{ number_format($product->discount_price, 2) }}</span>
-                                                                    <span
-                                                                        class="old-price ms-2 text-muted text-decoration-line-through">{{ number_format($product->price, 2) }}</span>
-                                                                @else
-                                                                    <span
-                                                                        class="new-price dominant-color">{{ number_format($product->price, 2) }}</span>
-                                                                @endif
-                                                            </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <div class="pro-content">
+                                                    <div class="product-title">
+                                                        <span class="d-block heading-weight"><a href="{{ route('products.show', $product->id) }}" class="d-block w-100 dominant-link text-truncate">{{ $product->name }}</a></span>
+                                                    </div>
+                                                    <div class="product-price">
+                                                        <div class="price-box heading-weight">
+                                                            @if($product->discount_price > 0)
+                                                                <span class="new-price dominant-color">{{ number_format($product->discount_price, 2) }}</span>
+                                                                <span class="old-price ms-2 text-muted text-decoration-line-through">{{ number_format($product->price, 2) }}</span>
+                                                            @else
+                                                                <span class="new-price dominant-color">{{ number_format($product->price, 2) }}</span>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                @endforeach
-                            </div>
-                            <div class="swiper-buttons">
-                                <div class="swiper-buttons-wrap">
-                                    <button type="button" class="swiper-prev swiper-prev-trend-product"
-                                        aria-label="Arrow previous"><i class="ri-arrow-left-line d-block lh-1"></i></button>
-                                    <button type="button" class="swiper-next swiper-next-trend-product"
-                                        aria-label="Arrow next"><i class="ri-arrow-right-line d-block lh-1"></i></button>
                                 </div>
-                            </div>
-                            <div class="swiper-dots" data-animate="animate__fadeIn">
-                                <div class="swiper-pagination swiper-pagination-trend-product"></div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

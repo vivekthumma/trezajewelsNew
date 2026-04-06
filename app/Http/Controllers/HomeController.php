@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -26,7 +27,7 @@ class HomeController extends Controller
         // 1. Basic Stats
         $totalOrders = \App\Models\Order::count();
         $totalRevenue = \App\Models\Order::where('status', '!=', 'cancelled')->sum('total_amount');
-        $newCustomers = \App\Models\User::where('type', '!=', 'admin')->where('created_at', '>=', now()->subMonth())->count();
+        $newCustomers = User::where('type', User::TYPE_USER)->where('created_at', '>=', now()->subMonth())->count();
         $weeklyOrders = \App\Models\Order::where('created_at', '>=', now()->subWeek())->count();
 
         // 2. Growth Calculation (Current vs Previous Month)

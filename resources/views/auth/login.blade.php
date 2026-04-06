@@ -5,7 +5,7 @@
 @section('content')
 <p class="login-box-msg">Sign in to start your session</p>
 
-<form method="POST" action="{{ route('login') }}">
+<form method="POST" action="{{ route('admin.login') }}">
     @csrf
     
     <div class="input-group mb-3">

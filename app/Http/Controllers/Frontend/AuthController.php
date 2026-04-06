@@ -14,7 +14,9 @@ class AuthController extends Controller
     public function showLoginForm()
     {
         if (Auth::check()) {
-            return redirect('/');
+            return Auth::user()->isAdmin()
+                ? redirect('/admin/home')
+                : redirect('/');
         }
         return view('frontend.auth.login');
     }
@@ -34,13 +36,14 @@ class AuthController extends Controller
                 ->withInput(['email' => $request->email]);
         }
 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
+        if ($user && $user->isAdmin()) {
+            return back()->withErrors([
+                'email' => 'Admin account cannot login from the user login page. Please use the admin login.',
+            ])->onlyInput('email');
+        }
 
-            // Redirect based on user type
-            if (Auth::user()->type === 'admin') {
-                return redirect()->intended('/admin/home');
-            }
+        if (Auth::attempt($credentials + ['type' => User::TYPE_USER])) {
+            $request->session()->regenerate();
 
             return redirect()->intended('/');
         }
@@ -53,7 +56,9 @@ class AuthController extends Controller
     public function showRegisterForm()
     {
         if (Auth::check()) {
-            return redirect('/');
+            return Auth::user()->isAdmin()
+                ? redirect('/admin/home')
+                : redirect('/');
         }
         return view('frontend.auth.register');
     }
@@ -72,7 +77,7 @@ class AuthController extends Controller
 
         if ($user) {
             // Security: Never allow updating an admin account via public registration
-            if ($user->type === 'admin') {
+            if ($user->isAdmin()) {
                 return back()->withErrors(['email' => 'This email is already associated with an administrator account. Please login.'])->withInput();
             }
             
@@ -90,7 +95,7 @@ class AuthController extends Controller
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
                 'password_set' => true,
-                'type' => 'user',
+                'type' => User::TYPE_USER,
             ]);
         }
 

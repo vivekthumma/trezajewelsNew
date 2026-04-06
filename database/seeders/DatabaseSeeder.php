@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin User',
             'email' => 'admin@trezajewels.com',
             'password' => bcrypt('password'),
+            'type' => User::TYPE_ADMIN,
+            'password_set' => true,
         ]);
     }
 }

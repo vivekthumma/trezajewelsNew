@@ -57,4 +57,18 @@ class Product extends Model
     {
         return $query->where('featured', 1);
     }
+
+    public function hasDiscount(): bool
+    {
+        return $this->discount_price !== null
+            && (float) $this->discount_price > 0
+            && (float) $this->discount_price < (float) $this->price;
+    }
+
+    public function effectivePrice(): float
+    {
+        return $this->hasDiscount()
+            ? (float) $this->discount_price
+            : (float) $this->price;
+    }
 }

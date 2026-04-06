@@ -444,7 +444,7 @@
 }
 
 .category-product .collection-category {
-    max-width: 1560px;
+    max-width: 1320px;
     margin: 0 auto;
 }
 
@@ -453,15 +453,26 @@
 }
 
 .category-product .collection-slider {
-    padding: 8px 12px 56px;
+    padding: 8px 0 56px;
 }
 
 .category-product .collection-slider .swiper-slide {
     height: auto;
 }
 
+.category-product .trend-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.category-product .trend-grid-item {
+    min-width: 0;
+}
+
 .category-product .single-product {
     height: 100%;
+    max-width: 100%;
 }
 
 .category-product .single-product-wrap {
@@ -494,13 +505,16 @@
 }
 
 .category-product .product-image a.pro-img {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1 / 1.08;
+    padding: 18px;
+    background: #fff;
 }
 
 .category-product .product-image a.pro-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
 }
 
 .category-product .product-cat-variant {
@@ -517,13 +531,14 @@
 }
 
 .category-product .product-content {
-    padding: 14px 10px 0;
+    padding: 18px 14px 0;
+    text-align: center;
 }
 
 .category-product .product-title a {
     min-height: 48px;
     color: var(--primary-dark);
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.45;
     white-space: normal;
     display: -webkit-box;
@@ -535,6 +550,7 @@
 .category-product .price-box {
     justify-content: center;
     gap: 8px;
+    min-height: 30px;
 }
 
 .category-product .price-box .new-price {
@@ -584,6 +600,11 @@
         padding-left: 0;
         padding-right: 0;
     }
+
+    .category-product .trend-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -592,7 +613,8 @@
     }
 
     .category-product .product-image a.pro-img {
-        aspect-ratio: 1 / 1.18;
+        aspect-ratio: 1 / 1.1;
+        padding: 12px;
     }
 
     .category-product .product-title a {
@@ -602,6 +624,11 @@
 
     .category-product .price-box .new-price {
         font-size: 16px !important;
+    }
+
+    .category-product .trend-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
     }
 }
 

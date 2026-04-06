@@ -67,7 +67,7 @@ class WishlistController extends Controller
     public function index()
     {
         $wishlistItems = $this->getWishlistItems();
-        $subtotal = $wishlistItems->sum(fn($item) => $item->product ? $item->product->price : 0);
+        $subtotal = $wishlistItems->sum(fn($item) => $item->product ? $item->product->effectivePrice() : 0);
         return view('frontend.wishlist', compact('wishlistItems', 'subtotal'));
     }
 

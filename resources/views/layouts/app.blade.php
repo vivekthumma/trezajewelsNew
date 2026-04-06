@@ -24,8 +24,19 @@
         <link rel="stylesheet" href="{{ asset('assets/css/style2.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/collection2.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/home-modern.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/cart-qty.css') }}">
         <!-- css-links end -->
         <style>
+            main{
+                padding-top: 36px;
+            }
+
+            @media (max-width: 1199px){
+                main{
+                    padding-top: 28px;
+                }
+            }
+
             /* Global Premium Product Card Styles */
             .pro-img {
                 position: relative !important;

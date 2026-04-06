@@ -17,13 +17,6 @@
             <span class="ap-name me-auto">Orders</span>
             {{-- <span class="ap-count extra-color font-12 d-flex align-items-center justify-content-center dominant-bg rounded-circle">3</span> --}}
         </a>
-
-        <!-- Placeholder for future modules -->
-        <a href="javascript:void(0)" class="body-dominant-color d-flex align-items-center justify-content-between ptb-15 plr-15 opacity-50">
-            <span class="ap-icon body-color icon-16 mer-5"><i class="ri-booklet-line"></i></span>
-            <span class="ap-name me-auto">Address book</span>
-        </a>
-
         <form action="{{ route('logout') }}" method="POST" class="d-inline">
             @csrf
             <button type="submit" class="body-dominant-color d-flex align-items-center justify-content-between ptb-15 plr-15 bg-transparent border-0 w-100 text-start">
