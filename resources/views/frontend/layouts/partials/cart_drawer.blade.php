@@ -35,13 +35,13 @@
                                             </span>
                                         @endif
                                     </div>
-                                    <div class="heading-color heading-weight mst-8 dominant-color">{{ number_format($item->price, 2) }}</div>
+                                    <div class="heading-color heading-weight mst-8 dominant-color">₹{{ number_format($item->price, 2) }}</div>
                                     <div class="cart-drawer-qty-remove d-flex align-items-end justify-content-between mst-16">
                                         <div class="js-qty-wrapper cart-drawer-qty">
-                                            <div class="js-qty-wrap d-flex extra-bg border-full rounded-pill overflow-hidden">
-                                                <button type="button" class="js-qty-adjust qty-minus body-color bg-transparent border-0" data-id="{{ $item->id }}" aria-label="Decrease quantity"><i class="ri-subtract-line d-block lh-1"></i></button>
-                                                <input type="number" class="js-qty-num qty-num text-center border-0 bg-transparent" value="{{ $item->quantity }}" min="1" readonly>
-                                                <button type="button" class="js-qty-adjust qty-plus body-color bg-transparent border-0" data-id="{{ $item->id }}" aria-label="Increase quantity"><i class="ri-add-line d-block lh-1"></i></button>
+                                            <div class="js-qty-wrap d-flex align-items-center flex-nowrap extra-bg border-full rounded-pill overflow-hidden" style="display: inline-flex; width: max-content;">
+                                                <button type="button" class="qty-minus body-color bg-transparent border-0 px-2 py-1 d-flex align-items-center justify-content-center" data-id="{{ $item->id }}" aria-label="Decrease quantity"><i class="ri-subtract-line d-block lh-1"></i></button>
+                                                <input type="number" class="qty-num p-0 text-center border-0 bg-transparent font-14 heading-weight body-color" value="{{ $item->quantity }}" min="1" readonly style="width: 35px;">
+                                                <button type="button" class="qty-plus body-color bg-transparent border-0 px-2 py-1 d-flex align-items-center justify-content-center" data-id="{{ $item->id }}" aria-label="Increase quantity"><i class="ri-add-line d-block lh-1"></i></button>
                                             </div>
                                         </div>
                                         <button type="button" class="remove-cart-item text-danger border-0 bg-transparent p-0 icon-16" data-id="{{ $item->id }}" aria-label="Remove item"><i class="ri-delete-bin-line d-block lh-1"></i></button>
@@ -65,7 +65,7 @@
             <div class="drawer-footer ptb-15 plr-15 bst">
                 <div class="drawer-total d-flex justify-content-between align-items-center mb-2">
                     <span class="text-uppercase heading-weight font-14">Estimated Total</span>
-                    <span class="heading-color heading-weight font-18 dominant-color cart-total">{{ number_format($cartSubtotal ?? 0, 2) }}</span>
+                    <span class="heading-color heading-weight font-18 dominant-color cart-total">₹{{ number_format($cartSubtotal ?? 0, 2) }}</span>
                 </div>
                 <div class="font-12 mb-3 text-muted">Shipping, taxes, and discounts calculated at checkout.</div>
                 <div class="cart-bottom-btn">

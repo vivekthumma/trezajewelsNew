@@ -93,7 +93,7 @@
                                     <a href="javascript:void(0)" class="dominant-link d-flex align-items-center js-cart-drawer" aria-label="Cart">
                                         <i class="ri-shopping-bag-3-line icon-16"></i>
                                         <span class="ms-1 heading-weight cart-counter">{{ $cartCount ?? 0 }}</span>
-                                        <span class="ms-2 d-none d-xl-inline-block cart-total heading-weight">{{ number_format($cartSubtotal ?? 0, 2) }}</span>
+                                        <span class="ms-2 d-none d-xl-inline-block cart-total heading-weight">₹{{ number_format($cartSubtotal ?? 0, 2) }}</span>
                                     </a>
                                 </li>
                             </ul>

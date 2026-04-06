@@ -196,7 +196,7 @@
                                 $('#cart-drawer-items').html(cartData.html);
                                 if ($('#main-cart-container').length) $('#main-cart-container').html(cartData.page_html);
                                 $('.cart-counter').text(cartData.cart_count);
-                                $('.cart-total, .subtotal-amount').text(cartData.subtotal);
+                                $('.cart-total, .subtotal-amount').text('₹' + cartData.subtotal);
                             });
 
                             btn.find('.product-loader-icon').hide();
@@ -262,7 +262,7 @@
                                     $('#cart-drawer-items').html(cartData.html);
                                     if ($('#main-cart-container').length) $('#main-cart-container').html(cartData.page_html);
                                     $('.cart-counter').text(cartData.cart_count);
-                                    $('.cart-total, .subtotal-amount').text(cartData.subtotal);
+                                    $('.cart-total, .subtotal-amount').text('₹' + cartData.subtotal);
                                 });
                             }
                         }
@@ -289,7 +289,7 @@
                                 $('#cart-drawer-items').html(cartData.html);
                                 if ($('#main-cart-container').length) $('#main-cart-container').html(cartData.page_html);
                                 $('.cart-counter').text(cartData.cart_count);
-                                $('.cart-total, .subtotal-amount').text(cartData.subtotal);
+                                $('.cart-total, .subtotal-amount').text('₹' + cartData.subtotal);
                             });
                         }
                     },

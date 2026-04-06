@@ -324,7 +324,7 @@
                                             </div>
                                             <div class="order-meta-box">
                                                 <div class="order-meta-label">Total</div>
-                                                <div class="order-meta-value">Rs. {{ number_format($order->total_amount, 2) }}</div>
+                                                <div class="order-meta-value">₹{{ number_format($order->total_amount, 2) }}</div>
                                             </div>
                                             <div class="order-meta-box">
                                                 <div class="order-meta-label">Status</div>

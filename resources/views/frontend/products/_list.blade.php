@@ -62,10 +62,10 @@
                         <div class="product-price">
                             <div class="price-box heading-weight">
                                 @if($product->discount_price > 0)
-                                    <span class="new-price dominant-color">{{ number_format($product->discount_price, 2) }}</span>
-                                    <span class="old-price ms-2 text-muted text-decoration-line-through">{{ number_format($product->price, 2) }}</span>
+                                    <span class="new-price dominant-color">₹{{ number_format($product->discount_price, 2) }}</span>
+                                    <span class="old-price ms-2 text-muted text-decoration-line-through">₹{{ number_format($product->price, 2) }}</span>
                                 @else
-                                    <span class="new-price dominant-color">{{ number_format($product->price, 2) }}</span>
+                                    <span class="new-price dominant-color">₹{{ number_format($product->price, 2) }}</span>
                                 @endif
                             </div>
                         </div>

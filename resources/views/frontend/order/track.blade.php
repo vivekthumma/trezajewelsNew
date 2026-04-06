@@ -439,7 +439,7 @@
                         </div>
                         <div class="track-stat-box">
                             <div class="track-stat-label">Total</div>
-                            <div class="track-stat-value">Rs. {{ number_format($order->total_amount, 2) }}</div>
+                            <div class="track-stat-value">₹{{ number_format($order->total_amount, 2) }}</div>
                         </div>
                     </div>
 
@@ -465,13 +465,13 @@
                                         <div class="track-summary-name">{{ $item->product->name ?? 'Product' }}</div>
                                         <div class="track-summary-meta">Qty: {{ $item->quantity }}</div>
                                     </div>
-                                    <div class="track-summary-price">Rs. {{ number_format($item->total, 2) }}</div>
+                                    <div class="track-summary-price">₹{{ number_format($item->total, 2) }}</div>
                                 </div>
                             @endforeach
 
                             <div class="track-summary-total">
                                 <span>Total Amount</span>
-                                <strong>Rs. {{ number_format($order->total_amount, 2) }}</strong>
+                                <strong>₹{{ number_format($order->total_amount, 2) }}</strong>
                             </div>
                         </div>
                     </div>

@@ -34,7 +34,7 @@
                                         @if($item->size || $item->color)
                                             <span class="cart-line-meta d-block">{{ $item->size }}{{ $item->size && $item->color ? ' / ' : '' }}{{ $item->color }}</span>
                                         @endif
-                                        <span class="cart-line-price d-block">{{ number_format($item->price, 2) }}</span>
+                                        <span class="cart-line-price d-block">₹{{ number_format($item->price, 2) }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -52,7 +52,7 @@
 
                             <div>
                                 <span class="cart-label-mobile">Total</span>
-                                <div class="cart-total-price cart-value-strong">{{ number_format($item->price * $item->quantity, 2) }}</div>
+                                <div class="cart-total-price cart-value-strong">₹{{ number_format($item->price * $item->quantity, 2) }}</div>
                             </div>
 
                             <div class="text-md-end">
@@ -81,7 +81,7 @@
             <div class="cart-summary-box">
                 <div class="cart-summary-row">
                     <span>Subtotal</span>
-                    <span class="subtotal-amount">{{ number_format($subtotal, 2) }}</span>
+                    <span class="subtotal-amount">₹{{ number_format($subtotal, 2) }}</span>
                 </div>
                 <div class="cart-summary-row discount">
                     <span>Discount</span>
@@ -93,7 +93,7 @@
                 </div>
                 <div class="cart-summary-total">
                     <strong>Total</strong>
-                    <strong class="subtotal-amount">{{ number_format($subtotal, 2) }}</strong>
+                    <strong class="subtotal-amount">₹{{ number_format($subtotal, 2) }}</strong>
                 </div>
             </div>
 

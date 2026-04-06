@@ -293,9 +293,9 @@
                                             <div class="product-title"><span class="d-block heading-weight"><a href="{{ route('products.show', $relProduct->id) }}" class="d-block w-100 dominant-link">{{ $relProduct->name }}</a></span></div>
                                             <div class="product-price">
                                                 <div class="price-box heading-weight">
-                                                    <span class="new-price dominant-color">{{ number_format($relProduct->effectivePrice(), 2) }}</span>
+                                                    <span class="new-price dominant-color">₹{{ number_format($relProduct->effectivePrice(), 2) }}</span>
                                                     @if($relProduct->hasDiscount())
-                                                        <span class="old-price ms-2 text-decoration-line-through">{{ number_format($relProduct->price, 2) }}</span>
+                                                        <span class="old-price ms-2 text-decoration-line-through">₹{{ number_format($relProduct->price, 2) }}</span>
                                                     @endif
                                                 </div>
                                             </div>

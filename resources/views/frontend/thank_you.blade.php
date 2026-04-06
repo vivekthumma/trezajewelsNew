@@ -200,11 +200,11 @@
                         </div>
                         <div>
                             <span class="order-summary-mobile-label">Price</span>
-                            <span class="order-summary-value">Rs. {{ number_format($item->price, 2) }}</span>
+                            <span class="order-summary-value">₹{{ number_format($item->price, 2) }}</span>
                         </div>
                         <div class="text-md-end">
                             <span class="order-summary-mobile-label">Amount</span>
-                            <span class="order-summary-value">Rs. {{ number_format($item->total, 2) }}</span>
+                            <span class="order-summary-value">₹{{ number_format($item->total, 2) }}</span>
                         </div>
                     </div>
                 @endforeach
@@ -214,7 +214,7 @@
                     <div></div>
                     <div></div>
                     <div class="text-md-end">
-                        <span class="order-summary-total-value">Rs. {{ number_format($order->total_amount, 2) }}</span>
+                        <span class="order-summary-total-value">₹{{ number_format($order->total_amount, 2) }}</span>
                     </div>
                 </div>
             </div>

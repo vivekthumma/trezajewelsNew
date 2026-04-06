@@ -156,7 +156,7 @@
                                 <div class="shop-sidebar price">
                                     <h6 class="font-18">Price</h6>
                                     <div class="shop-header d-flex justify-content-between mst-22">
-                                        <span class="shop-selected">The highest price is {{ number_format($maxDbPrice, 2) }}</span>
+                                        <span class="shop-selected">The highest price is ₹{{ number_format($maxDbPrice, 2) }}</span>
                                         <button type="button" class="shop-reset body-secondary-color text-decoration-underline clear-price">Reset</button>
                                     </div>
                                     <div class="shop-element mst-26">

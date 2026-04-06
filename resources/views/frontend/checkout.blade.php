@@ -403,7 +403,7 @@
                                         @if($item->size || $item->color)
                                             <div class="checkout-order-meta">{{ $item->size }}{{ $item->size && $item->color ? ' / ' : '' }}{{ $item->color }}</div>
                                         @endif
-                                        <div class="checkout-order-price">{{ number_format($item->price * $item->quantity, 2) }}</div>
+                                        <div class="checkout-order-price">₹{{ number_format($item->price * $item->quantity, 2) }}</div>
                                     </div>
                                 </div>
                             @endforeach
@@ -412,7 +412,7 @@
                         <div class="checkout-summary-totals">
                             <div class="checkout-total-row">
                                 <span>Subtotal</span>
-                                <span class="subtotal-amount">{{ number_format($subtotal, 2) }}</span>
+                                <span class="subtotal-amount">₹{{ number_format($subtotal, 2) }}</span>
                             </div>
                             <div class="checkout-total-row discount">
                                 <span>Discount</span>
@@ -430,7 +430,7 @@
 
                         <div class="checkout-grand-total">
                             <strong>Total</strong>
-                            <strong class="subtotal-amount">{{ number_format($subtotal, 2) }}</strong>
+                            <strong class="subtotal-amount">₹{{ number_format($subtotal, 2) }}</strong>
                         </div>
                     </div>
                 </div>
