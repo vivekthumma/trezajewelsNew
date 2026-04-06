@@ -18,9 +18,17 @@
 <!-- main start -->
 <main id="main">
     <!-- product-detail start -->
+    @php
+        $galleryImages = ($product->gallery ?? collect())
+            ->filter(fn ($image) => filled($image->image))
+            ->values();
+        $hasProductImages = $galleryImages->isNotEmpty() || filled($product->main_image);
+        $mainImage = filled($product->main_image) ? imgPath($product->main_image) : null;
+    @endphp
     <section class="product-detail section-pt">
         <div class="container">
             <div class="product-detail-area row row-mtm position-relative">
+                @if($hasProductImages)
                 <div class="product-detail-image col-12 col-lg-6 p-lg-sticky top-0" data-animate="animate__fadeIn">
                     <!-- product-detail-slider start -->
                     <div class="product-detail-slider per-xxl-10">
@@ -30,8 +38,8 @@
                                 <div class="product-img-big slider-big-h position-relative br-hidden">
                                     <div class="swiper" id="slider-big-h">
                                         <div class="swiper-wrapper product-swiper-wrapper">
-                                            @if($product->gallery && $product->gallery->count() > 0)
-                                                @foreach($product->gallery as $image)
+                                            @if($galleryImages->isNotEmpty())
+                                                @foreach($galleryImages as $image)
                                                     <div class="swiper-slide product-swiper-slide">
                                                         <div class="product-item-img position-relative">
                                                             <a href="{{ imgPath($image->image) }}" class="full-view product-thumbnail heading-color position-absolute top-0 end-0 width-40 height-40 d-flex align-items-center justify-content-center body-bg z-1 mst-15 mer-15 rounded-circle box-shadow" aria-label="Image full view"><i class="ri-fullscreen-line d-block lh-1"></i></a>
@@ -39,12 +47,9 @@
                                                         </div>
                                                     </div>
                                                 @endforeach
-                                            @else
+                                            @elseif($mainImage)
                                                 <div class="swiper-slide product-swiper-slide">
                                                     <div class="product-item-img position-relative">
-                                                        @php
-                                                            $mainImage = $product->main_image ? imgPath($product->main_image) : asset('assets/images/index/product/p-1.jpg');
-                                                        @endphp
                                                         <a href="{{ $mainImage }}" class="full-view product-thumbnail heading-color position-absolute top-0 end-0 width-40 height-40 d-flex align-items-center justify-content-center body-bg z-1 mst-15 mer-15 rounded-circle box-shadow" aria-label="Image full view"><i class="ri-fullscreen-line d-block lh-1"></i></a>
                                                         <img src="{{ $mainImage }}" data-zoom="{{ $mainImage }}" class="w-100 img-fluid zoom" alt="{{ $product->name }}">
                                                     </div>
@@ -64,8 +69,8 @@
                                 <div class="product-img-small slider-small-h">
                                     <div class="swiper" id="slider-small-h">
                                         <div class="swiper-wrapper">
-                                            @if($product->gallery && $product->gallery->count() > 0)
-                                                @foreach($product->gallery as $image)
+                                            @if($galleryImages->isNotEmpty())
+                                                @foreach($galleryImages as $image)
                                                     <div class="swiper-slide product-swiper-slide">
                                                         <div class="product-item-img br-hidden">
                                                             <a href="javascript:void(0)" class="d-block product-thumbnail">
@@ -74,11 +79,11 @@
                                                         </div>
                                                     </div>
                                                 @endforeach
-                                            @else
+                                            @elseif($mainImage)
                                                 <div class="swiper-slide product-swiper-slide">
                                                     <div class="product-item-img br-hidden">
                                                         <a href="javascript:void(0)" class="d-block product-thumbnail">
-                                                            <img src="{{ $mainImage ?? asset('assets/images/index/product/p-1.jpg') }}" class="w-100 img-fluid" alt="{{ $product->name }}">
+                                                            <img src="{{ $mainImage }}" class="w-100 img-fluid" alt="{{ $product->name }}">
                                                         </a>
                                                     </div>
                                                 </div>
@@ -91,8 +96,9 @@
                         </div>
                     </div>
                 </div>
+                @endif
 
-                <div class="col-12 col-lg-6 p-lg-sticky top-0" data-animate="animate__fadeIn">
+                <div class="col-12 {{ $hasProductImages ? 'col-lg-6' : 'col-lg-12' }} p-lg-sticky top-0" data-animate="animate__fadeIn">
                     <div class="product-detail-info">
                         <div class="product-title meb-13">
                             <span class="d-inline-block product-vendor heading-color text-uppercase heading-weight meb-8"><a href="javascript:void(0)">{{ $product->category->name ?? 'Category' }}</a></span>

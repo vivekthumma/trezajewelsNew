@@ -38,7 +38,7 @@
     <div class="col-12 col-sm-6 col-md-3 mb-4">
         <div class="small-box text-bg-success shadow-sm h-100 border-0">
             <div class="inner">
-                <h3>${{ number_format($totalRevenue, 2) }}</h3>
+                <h3>₹{{ number_format($totalRevenue, 2) }}</h3>
                 <p>Total Revenue</p>
             </div>
             <div class="icon">
@@ -143,7 +143,7 @@
                             <span class="description-percentage {{ $revenueGrowth >= 0 ? 'text-success' : 'text-danger' }} fw-bold">
                                 <i class="fas fa-caret-{{ $revenueGrowth >= 0 ? 'up' : 'down' }}"></i> {{ number_format(abs($revenueGrowth), 1) }}%
                             </span>
-                            <h5 class="description-header fs-4 fw-bold">${{ number_format($totalRevenue, 2) }}</h5>
+                            <h5 class="description-header fs-4 fw-bold">₹{{ number_format($totalRevenue, 2) }}</h5>
                             <span class="description-text text-muted text-uppercase small">Total Sales</span>
                         </div>
                     </div>
@@ -225,7 +225,7 @@
                             <tr>
                                 <td class="ps-4 fw-bold">#{{ $order->order_number }}</td>
                                 <td>{{ $order->first_name }} {{ $order->last_name }}</td>
-                                <td>${{ number_format($order->total_amount, 2) }}</td>
+                                <td>₹{{ number_format($order->total_amount, 2) }}</td>
                                 <td>
                                     @php
                                         $badgeClass = match($order->status) {

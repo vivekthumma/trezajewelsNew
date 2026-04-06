@@ -91,13 +91,13 @@
                                 @foreach($order->items as $item)
                                     <div class="d-flex justify-content-between mb-2">
                                         <span>{{ $item->product->name }} x {{ $item->quantity }}</span>
-                                        <span class="heading-weight">${{ number_format($item->total, 2) }}</span>
+                                        <span class="heading-weight">₹{{ number_format($item->total, 2) }}</span>
                                     </div>
                                 @endforeach
                                 <hr>
                                 <div class="d-flex justify-content-between">
                                     <span class="heading-weight">Total Amount</span>
-                                    <span class="heading-weight dominant-color font-18">${{ number_format($order->total_amount, 2) }}</span>
+                                    <span class="heading-weight dominant-color font-18">₹{{ number_format($order->total_amount, 2) }}</span>
                                 </div>
                             </div>
                         </div>

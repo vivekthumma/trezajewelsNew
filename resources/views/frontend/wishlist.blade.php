@@ -37,7 +37,7 @@
                         <div class="wish-total ul-mtm20">
                             <div class="wish-total-info d-flex justify-content-between">
                                 <span>Subtotal</span>
-                                <span class="heading-color heading-weight" id="wishlist-subtotal">${{ number_format($subtotal, 2) }}</span>
+                                <span class="heading-color heading-weight" id="wishlist-subtotal">₹{{ number_format($subtotal, 2) }}</span>
                             </div>
                             <div class="wish-total-info d-flex justify-content-between">
                                 <span>Items</span>
@@ -47,7 +47,7 @@
                         <div class="wish-total mst-26 pst-27 bst">
                             <div class="wish-total-info d-flex justify-content-between">
                                 <span>Total</span>
-                                <span class="heading-color heading-weight" id="wishlist-total">${{ number_format($subtotal, 2) }}</span>
+                                <span class="heading-color heading-weight" id="wishlist-total">₹{{ number_format($subtotal, 2) }}</span>
                             </div>
                         </div>
                         <div class="wish-summary-btn mst-26">
@@ -101,7 +101,7 @@
                                                 </div>
                                                 <div class="wish-item-info width-calc-88 psl-15">
                                                     <a href="{{ route('products.show', $item->product->id) }}" class="dominant-link heading-weight">{{ $item->product->name }}</a>
-                                                    <div class="wish-item-price heading-color mst-8 heading-weight">${{ number_format($item->product->price, 2) }}</div>
+                                                    <div class="wish-item-price heading-color mst-8 heading-weight">₹{{ number_format($item->product->price, 2) }}</div>
                                                     @if($item->product->quantity > 0)
                                                         <span class="text-success font-12"><i class="ri-check-line"></i> In Stock</span>
                                                     @else
@@ -112,7 +112,7 @@
                                         </div>
                                         <div class="col-12 col-md-3">
                                             <div class="d-md-none heading-color heading-weight meb-11">Price</div>
-                                            <div class="wishlist-item-price heading-color heading-weight">${{ number_format($item->product->price, 2) }}</div>
+                                            <div class="wishlist-item-price heading-color heading-weight">₹{{ number_format($item->product->price, 2) }}</div>
                                         </div>
                                         <div class="col-12 col-md-2 col-lg-3">
                                             <div class="d-md-none heading-color heading-weight meb-11">Action</div>

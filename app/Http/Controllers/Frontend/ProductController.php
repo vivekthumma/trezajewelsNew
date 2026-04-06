@@ -81,7 +81,7 @@ class ProductController extends Controller
                 'total' => (int) $products->total(),
                 'first_item' => (int) $products->firstItem(),
                 'last_item' => (int) $products->lastItem(),
-                'current_category_banner' => $currentCategory && $currentCategory->banner_image ? asset($currentCategory->banner_image) : asset($defaultBanner),
+                'current_category_banner' => $currentCategory && $currentCategory->banner_image ? imgPath($currentCategory->banner_image) : imgPath($defaultBanner),
                 'current_category_name' => $currentCategory ? $currentCategory->name : 'All Products',
             ]);
         }

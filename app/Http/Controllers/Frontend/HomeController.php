@@ -27,7 +27,7 @@ class HomeController extends Controller
             $firstSectionProducts = Product::where('category_id', $homeSections->first()->category_id)
                 ->active()
                 ->latest()
-                ->take(4)
+                ->take(2)
                 ->get();
         }
 
@@ -44,7 +44,7 @@ class HomeController extends Controller
         $products = Product::where('category_id', $categoryId)
             ->active()
             ->latest()
-            ->take(8)
+            ->take(2)
             ->get();
             
         return view('frontend.partials.home_category_products', [

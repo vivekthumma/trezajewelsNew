@@ -113,7 +113,7 @@
                                 <tr>
                                     <td class="ps-4 fw-bold text-primary">{{ $order->id }}</td>
                                     <td class="text-center small">{{ $order->created_at->format('d M, Y') }}</td>
-                                    <td class="text-center fw-bold text-dark">${{ number_format($order->total_amount, 2) }}</td>
+                                    <td class="text-center fw-bold text-dark">₹{{ number_format($order->total_amount, 2) }}</td>
                                     <td class="text-center">
                                         @php
                                             $badgeClass = match($order->status) {

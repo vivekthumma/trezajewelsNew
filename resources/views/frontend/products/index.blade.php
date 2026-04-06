@@ -190,14 +190,6 @@
                             </form>
                         </div>
 
-                        <!-- shop-sidebar banner start -->
-                        <div class="sidebar-banner d-none d-xl-block banner-hover mst-30" data-animate="animate__fadeIn">
-                            <a href="javascript:void(0)" class="d-block banner-img position-relative br-hidden">
-                                <span class="banner-icon secondary-color font-20 position-absolute top-50 start-50 width-48 height-48 d-flex align-items-center justify-content-center extra-bg z-1 rounded-circle"><i class="ri-arrow-right-line d-block lh-1"></i></span>
-                                <img src="{{ asset('assets/images/collection/side-image.jpg') }}" class="w-100 img-fluid" alt="side-image">
-                            </a>
-                        </div>
-                        <!-- shop-sidebar banner end -->
                     </div>
                     <!-- shop-sidebar end -->
 

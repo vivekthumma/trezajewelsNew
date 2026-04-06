@@ -63,9 +63,9 @@
                 <div class="bg-light p-3 rounded mb-4 shadow-sm border">
                     <div class="row align-items-center">
                         <div class="col-md-6">
-                            <span class="h2 fw-bold mb-0 text-primary">${{ number_format($product->price, 2) }}</span>
+                            <span class="h2 fw-bold mb-0 text-primary">₹{{ number_format($product->price, 2) }}</span>
                             @if($product->discount_price)
-                                <span class="ms-2 text-danger text-decoration-line-through">${{ number_format($product->discount_price, 2) }}</span>
+                                <span class="ms-2 text-danger text-decoration-line-through">₹{{ number_format($product->discount_price, 2) }}</span>
                             @endif
                         </div>
                         <div class="col-md-6 text-md-end">
@@ -84,7 +84,7 @@
                             <tr><th>Weight</th><td>{{ $product->weight ?? 'N/A' }}</td></tr>
                             <tr><th>Stone Type</th><td>{{ $product->stone_type ?? 'N/A' }}</td></tr>
                             <tr><th>Stone Weight</th><td>{{ $product->stone_weight ?? 'N/A' }}</td></tr>
-                            <tr><th>Making Charge</th><td>${{ number_format($product->making_charge, 2) }}</td></tr>
+                            <tr><th>Making Charge</th><td>₹{{ number_format($product->making_charge, 2) }}</td></tr>
                         </tbody>
                     </table>
                 </div>

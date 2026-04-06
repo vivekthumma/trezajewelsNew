@@ -64,7 +64,7 @@
                                                 <div class="col-12 col-lg-6">
                                                     <div class="row">
                                                         <div class="col-6">Total</div>
-                                                        <div class="col-6 heading-color heading-weight">${{ number_format($order->total_amount, 2) }}</div>
+                                                        <div class="col-6 heading-color heading-weight">₹{{ number_format($order->total_amount, 2) }}</div>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6">

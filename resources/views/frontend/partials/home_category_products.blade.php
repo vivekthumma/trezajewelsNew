@@ -1,5 +1,5 @@
 <div class="row row-mtm">
-    @forelse($products as $product)
+    @forelse($products->take(2) as $product)
     <div class="col-6">
         <a href="{{ route('products.show', $product->id) }}" class="d-block position-relative br-hidden banner-hover pro-img">
             <img src="{{ imgPath($product->main_image) }}" class="w-100 img-fluid border-radius" alt="{{ $product->name }}">

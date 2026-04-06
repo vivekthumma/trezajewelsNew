@@ -83,10 +83,10 @@
                 </td>
                 <td class="text-center">
                     @if($product->discount_price)
-                        <div class="text-muted text-decoration-line-through x-small opacity-50">${{ number_format($product->price, 2) }}</div>
-                        <div class="text-danger fw-bold fs-14">${{ number_format($product->discount_price, 2) }}</div>
+                        <div class="text-muted text-decoration-line-through x-small opacity-50">₹{{ number_format($product->price, 2) }}</div>
+                        <div class="text-danger fw-bold fs-14">₹{{ number_format($product->discount_price, 2) }}</div>
                     @else
-                        <div class="fw-bold text-dark fs-14">${{ number_format($product->price, 2) }}</div>
+                        <div class="fw-bold text-dark fs-14">₹{{ number_format($product->price, 2) }}</div>
                     @endif
                 </td>
                 <td class="text-center">

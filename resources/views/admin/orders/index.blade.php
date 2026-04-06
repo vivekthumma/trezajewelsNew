@@ -33,7 +33,7 @@
                     </div>
                     <div class="text-muted small"><i class="ri-mail-line me-1 opacity-50"></i>{{ $order->email }}</div>
                 </td>
-                <td class="text-center fw-bold text-dark fs-14">${{ number_format($order->total_amount, 2) }}</td>
+                <td class="text-center fw-bold text-dark fs-14">₹{{ number_format($order->total_amount, 2) }}</td>
                 <td class="text-center">
                     @php
                         $badgeClass = match($order->status) {

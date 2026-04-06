@@ -39,24 +39,24 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="text-center text-dark">${{ number_format($item->price, 2) }}</td>
+                                <td class="text-center text-dark">₹{{ number_format($item->price, 2) }}</td>
                                 <td class="text-center text-dark">{{ $item->quantity }}</td>
-                                <td class="text-end pe-4 fw-bold text-dark">${{ number_format($item->total, 2) }}</td>
+                                <td class="text-end pe-4 fw-bold text-dark">₹{{ number_format($item->total, 2) }}</td>
                             </tr>
                             @endforeach
                         </tbody>
                         <tfoot class="bg-light">
                             <tr>
                                 <td colspan="3" class="text-end ps-4 py-3 fw-bold">Subtotal</td>
-                                <td class="text-end pe-4 py-3 fw-bold text-dark">${{ number_format($order->subtotal, 2) }}</td>
+                                <td class="text-end pe-4 py-3 fw-bold text-dark">₹{{ number_format($order->subtotal, 2) }}</td>
                             </tr>
                             <tr>
                                 <td colspan="3" class="text-end ps-4 py-2">Discount</td>
-                                <td class="text-end pe-4 py-2 text-danger">-${{ number_format($order->discount, 2) }}</td>
+                                <td class="text-end pe-4 py-2 text-danger">-₹{{ number_format($order->discount, 2) }}</td>
                             </tr>
                             <tr>
                                 <td colspan="3" class="text-end ps-4 py-3 fw-bold fs-5">Grand Total</td>
-                                <td class="text-end pe-4 py-3 fw-bold text-primary fs-5">${{ number_format($order->total_amount, 2) }}</td>
+                                <td class="text-end pe-4 py-3 fw-bold text-primary fs-5">₹{{ number_format($order->total_amount, 2) }}</td>
                             </tr>
                         </tfoot>
                     </table>
