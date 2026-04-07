@@ -138,12 +138,14 @@
                                 <span class="pd-badge"><i class="ri-shield-check-line"></i>{{ $product->quantity > 0 ? 'Ready to ship' : 'Currently unavailable' }}</span>
                             </div>
                             <h1 class="pd-title">{{ $product->name }}</h1>
-                            <div class="pd-price">
-                                <strong>₹{{ $price }}</strong>
-                                @if($originalPrice)
-                                    <small class="text-decoration-line-through text-muted">₹{{ $originalPrice }}</small>
-                                @endif
-                                <span>Crafted for timeless everyday elegance.</span>
+                            <div class="pd-price-wrap" style="margin: 1.25rem 0;">
+                                <div class="pd-price m-0" style="align-items: center; gap: .8rem; flex-wrap: wrap;">
+                                    <strong style="white-space: nowrap;">₹{{ $price }}</strong>
+                                    @if($originalPrice)
+                                        <small class="text-decoration-line-through text-muted" style="font-size: 1.1rem; white-space: nowrap;">₹{{ $originalPrice }}</small>
+                                    @endif
+                                </div>
+                                <span style="display: block; margin-top: .5rem; color: #8f8578; font-size: .92rem;">Crafted for timeless everyday elegance.</span>
                             </div>
                             <div class="pd-copy">{!! $product->description ?: 'This piece is designed to bring refined elegance, balanced detailing, and a polished finish to your jewelry collection.' !!}</div>
 

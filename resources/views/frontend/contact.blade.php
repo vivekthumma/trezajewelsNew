@@ -28,7 +28,7 @@
     <div style="width:100%; height:400px; border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
     
         <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3692.8100557993057!2d70.77390258617667!3d22.247284492551717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959caf0e744d3b3%3A0xeb25a891e4e0d366!2sJK%20Sagar%20Vatika!5e0!3m2!1sen!2sin!4v1775213458742!5m2!1sen!2sin"
+            src="{{ setting('google_maps_url', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3692.8100557993057!2d70.77390258617667!3d22.247284492551717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959caf0e744d3b3%3A0xeb25a891e4e0d366!2sJK%20Sagar%20Vatika!5e0!3m2!1sen!2sin!4v1775213458742!5m2!1sen!2sin') }}"
             width="100%" 
             height="100%" 
             style="border:0;"
@@ -110,9 +110,8 @@
                         </div>
                         <div>
                             <h6 class="mb-1">Address</h6>
-                            <small class="text-muted">
-                                1234 MG Road, Bengaluru <br>
-                                Karnataka 560001, India
+                            <small class="text-muted lh-base">
+                                {{ setting('address', '1234 MG Road, Bengaluru, Karnataka 560001, India') }}
                             </small>
                         </div>
                     </div>
@@ -126,11 +125,26 @@
                             </div>
                         </div>
                         <div>
+                            @php
+                                $formatPhone = function($phone) {
+                                    $number = preg_replace('/[^0-9]/', '', $phone);
+                                    if (strlen($number) == 10) {
+                                        return '+91 ' . substr($number, 0, 5) . ' ' . substr($number, 5);
+                                    } elseif (strlen($number) == 12 && str_starts_with($number, '91')) {
+                                        return '+91 ' . substr($number, 2, 5) . ' ' . substr($number, 7);
+                                    }
+                                    return $phone;
+                                };
+                            @endphp
                             <h6 class="mb-1">Phone</h6>
-                            <small class="text-muted">
-                                +91 98765-43210 <br>
-                                +91 99887-65432
+                            <small class="text-muted d-block font-20">
+                                <a href="tel:{{ setting('phone') }}" class="text-muted text-decoration-none">{{ $formatPhone(setting('phone', '+91 98765 43210')) }}</a>
                             </small>
+                            @if(setting('phone_secondary'))
+                            <small class="text-muted d-block mt-1 font-20">
+                                <a href="tel:{{ setting('phone_secondary') }}" class="text-muted text-decoration-none">{{ $formatPhone(setting('phone_secondary')) }}</a>
+                            </small>
+                            @endif
                         </div>
                     </div>
 
@@ -144,10 +158,14 @@
                         </div>
                         <div>
                             <h6 class="mb-1">Email</h6>
-                            <small class="text-muted">
-                                info@trezajewels.com <br>
-                                hello@trezajewels.com
+                            <small class="text-muted d-block">
+                                {{ setting('email', 'info@trezajewels.com') }}
                             </small>
+                            @if(setting('email_secondary'))
+                            <small class="text-muted d-block mt-1">
+                                {{ setting('email_secondary') }}
+                            </small>
+                            @endif
                         </div>
                     </div>
 

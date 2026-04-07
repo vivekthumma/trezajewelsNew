@@ -81,16 +81,28 @@
                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                             <div class="row g-4">
                                 <div class="col-12">
-                                    <label class="form-label fw-bold small text-uppercase">Address</label>
-                                    <textarea name="address" class="form-control" rows="4" placeholder="Enter physical address">{{ setting('address') }}</textarea>
+                                    <label class="form-label fw-bold small text-uppercase text-primary">Office Address</label>
+                                    <input type="text" name="address" class="form-control border-primary-subtle" value="{{ setting('address') }}" placeholder="Enter physical address">
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label fw-bold small text-uppercase">Email Address</label>
-                                    <input type="email" name="email" class="form-control" value="{{ setting('email') }}" placeholder="info@example.com">
+                                    <label class="form-label fw-bold small text-uppercase text-primary">Primary Email</label>
+                                    <input type="email" name="email" class="form-control border-primary-subtle" value="{{ setting('email') }}" placeholder="info@trezajewels.com">
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label fw-bold small text-uppercase">Phone Number</label>
-                                    <input type="text" name="phone" class="form-control" value="{{ setting('phone') }}" placeholder="+1 234 567 890">
+                                    <label class="form-label fw-bold small text-uppercase text-primary">Secondary Email (Optional)</label>
+                                    <input type="email" name="email_secondary" class="form-control border-primary-subtle" value="{{ setting('email_secondary') }}" placeholder="support@trezajewels.com">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold small text-uppercase text-primary">Primary Phone</label>
+                                    <input type="text" name="phone" class="form-control border-primary-subtle" value="{{ setting('phone') }}" placeholder="+91 98765 43210">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold small text-uppercase text-primary">Secondary Phone (Optional)</label>
+                                    <input type="text" name="phone_secondary" class="form-control border-primary-subtle" value="{{ setting('phone_secondary') }}" placeholder="+91 99887 65432">
+                                </div>
+                                <div class="col-12 border-top pt-4 mt-2">
+                                    <label class="form-label fw-bold small text-uppercase text-primary"><i class="ri-map-pin-2-line me-1"></i> Google Maps Embed URL</label>
+                                    <input type="text" name="google_maps_url" class="form-control border-primary-subtle" value="{{ setting('google_maps_url') }}" placeholder="Paste the src URL from Google Maps embed code">
                                 </div>
                             </div>
                         </div>

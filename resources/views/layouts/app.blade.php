@@ -217,7 +217,7 @@
                         $('.cart-drawer-item-list').html(cartData.html);
                         if($('#main-cart-container').length) $('#main-cart-container').html(cartData.page_html);
                         $('.cart-counter').text(cartData.cart_count);
-                        $('.subtotal-amount, .cart-total').text(cartData.subtotal);
+                        $('.subtotal-amount, .cart-total').text('₹' + cartData.subtotal);
                     });
                     $.get('/wishlist/count', function(data) {
                         if (data.success) {
@@ -288,7 +288,7 @@
                                     $('.cart-drawer-item-list').html(cartData.html);
                                     if($('#main-cart-container').length) $('#main-cart-container').html(cartData.page_html);
                                     $('.cart-counter').text(cartData.cart_count);
-                                    $('.subtotal-amount, .cart-total').text(cartData.subtotal);
+                                    $('.subtotal-amount, .cart-total').text('₹' + cartData.subtotal);
                                 });
 
                                 btn.find('.product-loader-icon').hide();
@@ -327,7 +327,7 @@
                                         $('.cart-drawer-item-list').html(cartData.html);
                                         if($('#main-cart-container').length) $('#main-cart-container').html(cartData.page_html);
                                         $('.cart-counter').text(cartData.cart_count);
-                                        $('.subtotal-amount, .cart-total').text(cartData.subtotal);
+                                        $('.subtotal-amount, .cart-total').text('₹' + cartData.subtotal);
                                     });
                                 }
                             }
@@ -357,7 +357,7 @@
                                     $('.cart-drawer-item-list').html(cartData.html);
                                     if($('#main-cart-container').length) $('#main-cart-container').html(cartData.page_html);
                                     $('.cart-counter').text(cartData.cart_count);
-                                    $('.subtotal-amount, .cart-total').text(cartData.subtotal);
+                                    $('.subtotal-amount, .cart-total').text('₹' + cartData.subtotal);
                                 });
                             } else {
                                 alert(data.message || "Error updating quantity");

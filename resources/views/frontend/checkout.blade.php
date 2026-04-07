@@ -416,15 +416,15 @@
                             </div>
                             <div class="checkout-total-row discount">
                                 <span>Discount</span>
-                                <span>0.00</span>
+                                <span>₹0.00</span>
                             </div>
                             <div class="checkout-total-row shipping">
                                 <span>Shipping</span>
-                                <span>0.00</span>
+                                <span>₹0.00</span>
                             </div>
                             <div class="checkout-total-row">
                                 <span>Tax</span>
-                                <span>0.00</span>
+                                <span>₹0.00</span>
                             </div>
                         </div>
 

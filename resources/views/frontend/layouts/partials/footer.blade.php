@@ -7,6 +7,16 @@
     $instagram = setting('instagram', setting('instagram_link', '#'));
     $twitter = setting('twitter', setting('twitter_link', '#'));
     $facebook = setting('facebook', setting('facebook_link', '#'));
+
+    $formatPhone = function($phone) {
+        $number = preg_replace('/[^0-9]/', '', $phone);
+        if (strlen($number) == 10) {
+            return '+91 ' . substr($number, 0, 5) . ' ' . substr($number, 5);
+        } elseif (strlen($number) == 12 && str_starts_with($number, '91')) {
+            return '+91 ' . substr($number, 2, 5) . ' ' . substr($number, 7);
+        }
+        return $phone;
+    };
 @endphp
 
 <!-- footer-top start -->
@@ -49,7 +59,7 @@
                                     <span class="width-16 dominant-color icon-16"><i class="ri-phone-line"></i></span>
                                     <div class="psl-15 text-start">
                                         <div class="ul-ft">
-                                            <span><a href="tel:{{ $site_phone }}" class="d-inline-block body-dominant-color">{{ $site_phone }}</a></span>
+                                            <span><a href="tel:{{ $site_phone }}" class="d-inline-block body-dominant-color">{{ $formatPhone($site_phone) }}</a></span>
                                         </div>
                                     </div>
                                 </div>

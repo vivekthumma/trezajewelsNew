@@ -85,11 +85,11 @@
                 </div>
                 <div class="cart-summary-row discount">
                     <span>Discount</span>
-                    <span>0.00</span>
+                    <span>₹0.00</span>
                 </div>
                 <div class="cart-summary-row shipping">
                     <span>Shipping</span>
-                    <span>0.00</span>
+                    <span>₹0.00</span>
                 </div>
                 <div class="cart-summary-total">
                     <strong>Total</strong>
